@@ -13,15 +13,29 @@ size = Vector2(1000, 152)
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6hvob")]
-position = Vector2(269, -16)
+position = Vector2(231, -305)
+run_max_speed = 700.0
+jump_velocity = -2000.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(564, 395)
+position = Vector2(245, -11)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
 mesh = SubResource("QuadMesh_p02p2")
 texture = SubResource("CanvasTexture_ypqq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_xty3h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(912, -513)
+scale = Vector2(0.645, 0.645)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+mesh = SubResource("QuadMesh_p02p2")
+texture = SubResource("CanvasTexture_ypqq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_xty3h")

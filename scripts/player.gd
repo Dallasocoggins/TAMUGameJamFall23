@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var run_deceleration = 4000.0
 @export var turn_acceleration = 10000.0
 
-@export var jump_velocity = -400.0
+@export var jump_velocity = -500.0
 @export var jump_low_multiplier = 2 # Used for falling faster when jump button is let go of early
 @export var fall_acceleration_multiplier = 1.5
 @export var terminal_velocity = 1000.0
@@ -42,7 +42,8 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and jump_count_current >= 1:
 		velocity.y = jump_velocity
-		jump_count_current -= 1
+		if (not is_on_floor()):
+			jump_count_current -= 1
 	
 
 	# Get the input direction and handle the movement/deceleration.
