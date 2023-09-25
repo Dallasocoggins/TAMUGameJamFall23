@@ -12,3 +12,6 @@ data_*/
 .godot/editor/editor_layout.cfg
 .godot/editor/filesystem_cache8
 .godot/editor/project_metadata.cfg
+
+# Godot 4+ specific ignores
+.godot/

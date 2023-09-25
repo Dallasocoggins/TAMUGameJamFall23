@@ -13,7 +13,7 @@ config_version=5
 config/name="Humanitys Bargain"
 run/main_scene="res://scenes/level1.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
 
 [dotnet]
 
