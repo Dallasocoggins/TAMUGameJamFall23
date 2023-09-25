@@ -1,26 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_yjf2x"]
-[ext_resource type="Texture2D" uid="uid://cp1spupdtqpeb" path="res://sprites/turn_2.png" id="2_eyxyw"]
+[ext_resource type="SpriteFrames" uid="uid://dh6pb5oe4cwcj" path="res://sprites/player.tres" id="2_px1jv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
+radius = 50.0
+height = 284.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_yjf2x")
-jumpVelocity = -600.0
-jumpLowMultiplier = 4
-fallMultipler = 3.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -66)
-scale = Vector2(0.667, 1)
-texture = ExtResource("2_eyxyw")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 10
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("2_px1jv")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_hok6a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -200)
-zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true

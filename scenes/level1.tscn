@@ -13,8 +13,7 @@ size = Vector2(1000, 152)
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6hvob")]
-position = Vector2(195, 156)
-jumpVelocity = -800.0
+position = Vector2(269, -16)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(564, 395)
