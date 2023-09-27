@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://slyhluoya6p7"]
+
+[ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
+[ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6hvob")]
+position = Vector2(231, -305)
+
+[node name="TemporaryPlatform" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(-3166, -1073)
+scale = Vector2(1, 26.268)
+
+[node name="TemporaryPlatform6" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(3149, -1068)
+scale = Vector2(1, 26.268)
+
+[node name="TemporaryPlatform2" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(978, -466)
+scale = Vector2(7.84, 1)
+
+[node name="TemporaryPlatform7" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(1498, -600)
+rotation = -0.354823
+scale = Vector2(7.84, 1)
+
+[node name="TemporaryPlatform8" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(1906, -780)
+rotation = -0.632804
+scale = Vector2(2.63384, 1)
+
+[node name="TemporaryPlatform9" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(2052, -930)
+rotation = -0.96036
+scale = Vector2(2.63384, 1)
+
+[node name="TemporaryPlatform10" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(2213, -1077)
+rotation = -1.29838
+scale = Vector2(2.63384, 2.34666)
+
+[node name="TemporaryPlatform3" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(-355, -800)
+scale = Vector2(7.84, 1)
+
+[node name="TemporaryPlatform4" parent="." instance=ExtResource("2_y1ymi")]
+scale = Vector2(64.64, 1)
+
+[node name="TemporaryPlatform5" parent="." instance=ExtResource("2_y1ymi")]
+position = Vector2(0, -2235)
+scale = Vector2(64.64, 1)

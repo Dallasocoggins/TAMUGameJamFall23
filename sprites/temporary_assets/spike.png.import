@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp1spupdtqpeb"
-path="res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.ctex"
+uid="uid://figviy8ljq7w"
+path="res://.godot/imported/spike.png-d04f04f055b05a2389ebbc4f8a2e2462.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/turn_2.png"
-dest_files=["res://.godot/imported/turn_2.png-20b5f7d0f00fbeb24cc760628b91b8ea.ctex"]
+source_file="res://sprites/temporary_assets/spike.png"
+dest_files=["res://.godot/imported/spike.png-d04f04f055b05a2389ebbc4f8a2e2462.ctex"]
 
 [params]
 

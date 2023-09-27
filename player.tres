@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dh6pb5oe4cwcj"]
 
-[ext_resource type="Texture2D" uid="uid://cp1spupdtqpeb" path="res://sprites/turn_2.png" id="1_sirsj"]
+[ext_resource type="Texture2D" uid="uid://cp1spupdtqpeb" path="res://sprites/temporary_assets/turn_2.png" id="1_sirsj"]
 
 [resource]
 animations = [{

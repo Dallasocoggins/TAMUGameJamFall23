@@ -19,9 +19,9 @@ Casey Pei
 Dallas Coggins
 Madison Sutton
 Peter Schlenker"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/level/main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://sprites/turn_2.png"
+config/icon="res://sprites/temporary_assets/turn_2.png"
 
 [display]
 
