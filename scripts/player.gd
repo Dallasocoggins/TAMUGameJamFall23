@@ -52,7 +52,10 @@ func _physics_process(delta):
 		coyote_time_countdown = coyote_time
 		
 	# You can't fall faster than terminal velocity
-	velocity.y = min (velocity.y, slow_fall_terminal_velocity) if slow_fall_enabled and Input.is_action_pressed("jump") else min (velocity.y, terminal_velocity)
+	if slow_fall_enabled and Input.is_action_pressed("jump"):
+		velocity.y = min (velocity.y, slow_fall_terminal_velocity)
+	else:
+		velocity.y = min (velocity.y, terminal_velocity)
 
 	# Handle Jump.
 	if (Input.is_action_just_pressed("jump") and (jump_count_current >= 1 or is_on_floor() or coyote_time_countdown > 0)) \
@@ -88,10 +91,12 @@ func _physics_process(delta):
 	
 	# If we are travelling faster then max speed, that's ok, but we should slow down even if the player is holding down left or right
 	if direction and velocity.x == clampf(velocity.x, -run_max_speed, run_max_speed) and not (no_moving_on_ground_enabled and is_on_floor()):
-		velocity.x += direction * delta * (current_turn_acceleration if sign(direction) == -sign(velocity.x) else current_run_acceleration)
+		var acceleration = current_turn_acceleration if sign(direction) == -sign(velocity.x) else current_run_acceleration
+		velocity.x += direction * delta * acceleration
 		velocity.x = clampf(velocity.x, -run_max_speed, run_max_speed)
 	else:
-		var new_velocity = velocity.x - sign(velocity.x) * delta * (current_turn_acceleration if sign(direction) == -sign(velocity.x) else current_run_deceleration)
+		var acceleration = current_turn_acceleration if sign(direction) == -sign(velocity.x) else current_run_deceleration
+		var new_velocity = velocity.x - sign(velocity.x) * delta * acceleration
 		velocity.x = new_velocity if sign(new_velocity) == sign(velocity.x) else 0
 	
 	if (sign(velocity.x) != last_velocity_sign && sign(velocity.x) != 0):
