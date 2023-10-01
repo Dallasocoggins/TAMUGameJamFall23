@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6se46n6slpnm"]
+
+[ext_resource type="Script" path="res://scripts/MyHurtBox.gd" id="1_4d736"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5111o"]
+size = Vector2(175, 441)
+
+[node name="HurtBox" type="Node2D"]
+
+[node name="MyHurtBox" type="Area2D" parent="."]
+script = ExtResource("1_4d736")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+position = Vector2(22.5, 8.5)
+shape = SubResource("RectangleShape2D_5111o")

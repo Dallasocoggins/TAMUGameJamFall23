@@ -104,3 +104,8 @@ func _physics_process(delta):
 		last_velocity_sign = sign(velocity.x)
 
 	move_and_slide()
+
+
+func _process(float) -> void:
+	if Input.is_action_just_pressed("attack"):
+		$AnimationPlayer.play("attack_side")
