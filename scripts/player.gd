@@ -100,7 +100,7 @@ func _physics_process(delta):
 		velocity.x = new_velocity if sign(new_velocity) == sign(velocity.x) else 0
 	
 	if (sign(velocity.x) != last_velocity_sign && sign(velocity.x) != 0):
-		sprite.flip_h = sign(velocity.x) <  0
+		sprite.scale.x *= -1
 		last_velocity_sign = sign(velocity.x)
 
 	move_and_slide()
