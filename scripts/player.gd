@@ -30,7 +30,8 @@ var last_velocity_sign = 1
 var jump_count_current = bonus_jump_count_max
 var coyote_time_countdown = 0
 var jump_buffer_countdown = 0
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite = $Sprite2D
+@onready var animaton_player = $AnimationPlayer
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -108,4 +109,11 @@ func _physics_process(delta):
 
 func _process(float) -> void:
 	if Input.is_action_just_pressed("attack"):
-		$AnimationPlayer.play("attack_side")
+		animaton_player.play("attack_side")
+
+
+# This is called when an animation finishes playing
+# We need to change the animation once the attack finshes
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "attack_side":
+		animaton_player.play("idle")
