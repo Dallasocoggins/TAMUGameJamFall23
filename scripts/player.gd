@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var run_max_speed = 1000.0
+@export var run_max_speed = 900.0
 @export var run_acceleration = 5000.0
 @export var run_deceleration = 7000.0
-@export var turn_acceleration = 10000.0
+@export var turn_acceleration = 50000.0
 @export var no_moving_on_ground_enabled = false
 
 @export var jump_velocity = -2000.0
@@ -17,7 +17,7 @@ extends CharacterBody2D
 # These are the run controls for when you are midair
 @export var air_run_acceleration = 2000.0
 @export var air_run_deceleration = 1000.0
-@export var air_turn_acceleration = 10000.0
+@export var air_turn_acceleration = 30000.0
 
 # TODO: Implement dash
 @export var dash_enabled = false
@@ -25,6 +25,9 @@ extends CharacterBody2D
 
 @export var coyote_time = 0.1 # If you were on the floor in the last this many seconds, you can still jump
 @export var jump_buffer = 0.1 # If you try to jump not on the floor but land on the floor within this many seconds, you can still jump
+
+#@export var animation_idle_move_threshold = 10.0 # If you are moving slower than this sideways, play the idle animation
+
 
 var last_velocity_sign = 1
 var jump_count_current = bonus_jump_count_max
@@ -36,6 +39,9 @@ var jump_buffer_countdown = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
+func _ready():
+	animation_player.play("idle")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -103,6 +109,11 @@ func _physics_process(delta):
 	if (sign(velocity.x) != last_velocity_sign && sign(velocity.x) != 0):
 		sprite.scale.x *= -1
 		last_velocity_sign = sign(velocity.x)
+
+	if direction != 0 and animation_player.current_animation == "idle":
+		animation_player.play("run_right")
+	elif direction == 0 and animation_player.current_animation == "run_right":
+		animation_player.play("idle")
 
 	move_and_slide()
 
