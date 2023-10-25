@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8dorty1nqvb7"]
+
+[ext_resource type="Script" path="res://scripts/BasicEnemy.gd" id="1_b45um"]
+[ext_resource type="PackedScene" uid="uid://mgd1h5vvxj0y" path="res://scenes/CustomNodes/HurtBox.tscn" id="2_d7b2i"]
+[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="3_8wqys"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qadpl"]
+radius = 85.0
+height = 432.0
+
+[node name="BasicEnemy" type="CharacterBody2D"]
+script = ExtResource("1_b45um")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_d7b2i")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qadpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("3_8wqys")

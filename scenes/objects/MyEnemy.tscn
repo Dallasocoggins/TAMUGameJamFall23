@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8dorty1nqvb7"]
-
-[ext_resource type="Script" path="res://scripts/BasicEnemy.gd" id="1_b4a5r"]
-[ext_resource type="PackedScene" uid="uid://mgd1h5vvxj0y" path="res://scenes/CustomNodes/HurtBox.tscn" id="2_5uo8r"]
-
-[node name="MyEnemy" type="CharacterBody2D"]
-script = ExtResource("1_b4a5r")
-
-[node name="HurtBox" parent="." instance=ExtResource("2_5uo8r")]

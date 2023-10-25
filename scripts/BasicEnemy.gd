@@ -1,3 +1,4 @@
+class_name BasicEnemy
 extends CharacterBody2D
 
 @export var health_points = 100
@@ -17,3 +18,4 @@ func take_damage(damage) -> void:
 	if(health_points <= 0):
 		print("Dead")
 	print("Did Damage")
+
