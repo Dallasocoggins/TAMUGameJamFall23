@@ -73,6 +73,15 @@ pause={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="default"
+2d_physics/layer_2="player"
+2d_physics/layer_3="walls"
+2d_physics/layer_4="enemies"
+2d_physics/layer_5="items"
+2d_physics/layer_6="hit_box"
+
 [physics]
 
 2d/default_gravity=4000.0

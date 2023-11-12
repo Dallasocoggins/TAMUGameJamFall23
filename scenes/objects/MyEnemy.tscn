@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://mgd1h5vvxj0y" path="res://scenes/CustomNodes/HurtBox.tscn" id="2_5uo8r"]
 
 [node name="MyEnemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_b4a5r")
 
 [node name="HurtBox" parent="." instance=ExtResource("2_5uo8r")]

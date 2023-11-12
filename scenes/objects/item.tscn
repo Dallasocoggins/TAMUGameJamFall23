@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://duqn11y65km6x"]
+[gd_scene load_steps=6 format=3 uid="uid://duqn11y65km6x"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_bro8i"]
+[ext_resource type="Texture2D" uid="uid://q0x6q4tt7d28" path="res://sprites/temporary_assets/icon.svg" id="2_scybk"]
 
 [sub_resource type="Animation" id="Animation_hyhxv"]
 resource_name = "bobbing_up_and_down"
@@ -24,8 +25,12 @@ _data = {
 "bobbing_up_and_down": SubResource("Animation_hyhxv")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0jnb"]
+radius = 69.0072
+
 [node name="Item" type="Node2D"]
 script = ExtResource("1_bro8i")
+texture = ExtResource("2_scybk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -33,3 +38,13 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1.24741)
+texture = ExtResource("2_scybk")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 10
+shape = SubResource("CircleShape2D_k0jnb")
