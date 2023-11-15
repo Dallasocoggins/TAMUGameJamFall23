@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://slyhluoya6p7"]
+[gd_scene load_steps=6 format=3 uid="uid://slyhluoya6p7"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
 [ext_resource type="PackedScene" uid="uid://b8dorty1nqvb7" path="res://scenes/objects/MyEnemy.tscn" id="3_1njad"]
+[ext_resource type="PackedScene" uid="uid://duqn11y65km6x" path="res://scenes/objects/item.tscn" id="4_x5il5"]
+[ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="5_57l30"]
 
 [node name="World" type="Node2D"]
 
@@ -53,3 +55,10 @@ position = Vector2(0, -2235)
 scale = Vector2(64.64, 1)
 
 [node name="MyEnemy" parent="." instance=ExtResource("3_1njad")]
+position = Vector2(0, -194)
+
+[node name="Item" parent="." instance=ExtResource("4_x5il5")]
+position = Vector2(-416, -193)
+texture = ExtResource("5_57l30")
+spriteScale = Vector2(0.1, 0.1)
+type = 0

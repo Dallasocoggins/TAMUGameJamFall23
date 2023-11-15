@@ -28,9 +28,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_k0jnb"]
 radius = 69.0072
 
-[node name="Item" type="Node2D"]
+[node name="Item" type="Node2D" groups=["item"]]
 script = ExtResource("1_bro8i")
 texture = ExtResource("2_scybk")
+type = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -38,12 +39,12 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1.24741)
+position = Vector2(0, -29.8469)
 texture = ExtResource("2_scybk")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["item"]]
 collision_layer = 16
-collision_mask = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 10

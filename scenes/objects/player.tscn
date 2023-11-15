@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ncfc78vywjki"]
+[gd_scene load_steps=36 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
 [ext_resource type="Texture2D" uid="uid://eyq30pihoxfp" path="res://sprites/parry/turnaround/turn_3.png" id="2_8kmu8"]
@@ -26,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://cyejbre85eug7" path="res://sprites/parry/run_right/frame_00010.png" id="23_dqmjw"]
 [ext_resource type="Texture2D" uid="uid://87xhc1e8pyqb" path="res://sprites/parry/run_right/frame_00011.png" id="24_5mxop"]
 [ext_resource type="Texture2D" uid="uid://d1ofwdd01qy3q" path="res://sprites/parry/run_right/frame_00012.png" id="25_88uaf"]
+[ext_resource type="Script" path="res://scripts/MyHurtBox.gd" id="27_bthv1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
+radius = 50.0
+height = 284.0
 
 [sub_resource type="Animation" id="Animation_q6a7i"]
 length = 0.001
@@ -130,14 +135,17 @@ _data = {
 radius = 91.0
 height = 290.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
-radius = 50.0
-height = 284.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n3hqv"]
+radius = 45.0
+height = 250.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 21
 script = ExtResource("1_2lgnl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hok6a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_process_mode = 0
@@ -151,7 +159,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_355wr")
 
 [node name="MyHitBox" type="Area2D" parent="Sprite2D"]
-collision_layer = 32
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_jmnur")
 
@@ -161,9 +169,13 @@ scale = Vector2(3.33333, 3.33333)
 shape = SubResource("CapsuleShape2D_ebv14")
 disabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 0)
-shape = SubResource("CapsuleShape2D_hok6a")
+[node name="MyHurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 56
+script = ExtResource("27_bthv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+shape = SubResource("CapsuleShape2D_n3hqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true

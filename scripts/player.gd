@@ -39,6 +39,8 @@ var jump_buffer_countdown = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var Item = preload("res://scripts/item.gd")
+
 
 func _ready():
 	animation_player.play("idle")
@@ -132,3 +134,16 @@ func _process(float) -> void:
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name != "idle":
 		animation_player.play("idle")
+
+func collide(other):
+	if other == null:
+		return
+		
+	var parent = other.get_parent()
+	if parent.is_in_group("item"):
+		match (parent.type):
+			Item.ItemType.ANGEL:
+				print_debug("got the angel parasite")
+			Item.ItemType.VAMPIRE:
+				print_debug("got the vampire parasite")
+		parent.queue_free()
