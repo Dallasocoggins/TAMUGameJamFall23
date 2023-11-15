@@ -1,17 +1,31 @@
 extends CharacterBody2D
 
+var angel_active = false
+var no_moving_on_ground_enabled:
+	get:
+		return angel_active
+var slow_fall_enabled:
+	get:
+		return angel_active
+# The jump off the ground is free
+var bonus_jump_count_max:
+	get:
+		if (angel_active):
+			return 1
+		else:
+			return 0
+
+var vampire_active = false
+
 @export var run_max_speed = 900.0
 @export var run_acceleration = 5000.0
 @export var run_deceleration = 7000.0
 @export var turn_acceleration = 50000.0
-@export var no_moving_on_ground_enabled = false
 
 @export var jump_velocity = -2000.0
 @export var jump_low_multiplier = 2 # Used for falling faster when jump button is let go of early
 @export var fall_acceleration_multiplier = 1.1
 @export var terminal_velocity = 5000.0
-@export var bonus_jump_count_max = 1 # I renamed this to bonus jump count because the jump off the ground is free
-@export var slow_fall_enabled = true
 @export var slow_fall_terminal_velocity = 300.0
 
 # These are the run controls for when you are midair
@@ -36,6 +50,9 @@ var jump_buffer_countdown = 0
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
+@onready var angel_hud = $HUD/Angel
+@onready var vampire_hud = $HUD/Vampire
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -44,6 +61,8 @@ var Item = preload("res://scripts/item.gd")
 
 func _ready():
 	animation_player.play("idle")
+	angel_hud.hide()
+	vampire_hud.hide()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -144,6 +163,10 @@ func collide(other):
 		match (parent.type):
 			Item.ItemType.ANGEL:
 				print_debug("got the angel parasite")
+				angel_active = true
+				angel_hud.show()
 			Item.ItemType.VAMPIRE:
 				print_debug("got the vampire parasite")
+				vampire_active = true
+				vampire_hud.show()
 		parent.queue_free()

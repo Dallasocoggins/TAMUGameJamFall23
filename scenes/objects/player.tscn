@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ncfc78vywjki"]
+[gd_scene load_steps=38 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
 [ext_resource type="Texture2D" uid="uid://eyq30pihoxfp" path="res://sprites/parry/turnaround/turn_3.png" id="2_8kmu8"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://87xhc1e8pyqb" path="res://sprites/parry/run_right/frame_00011.png" id="24_5mxop"]
 [ext_resource type="Texture2D" uid="uid://d1ofwdd01qy3q" path="res://sprites/parry/run_right/frame_00012.png" id="25_88uaf"]
 [ext_resource type="Script" path="res://scripts/MyHurtBox.gd" id="27_bthv1"]
+[ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="28_nt3gd"]
+[ext_resource type="Texture2D" uid="uid://c3ffd13op718i" path="res://sprites/parasites/vampire.png" id="29_f7sdj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
 radius = 50.0
@@ -144,7 +146,7 @@ collision_layer = 2
 collision_mask = 21
 script = ExtResource("1_2lgnl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="WallCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hok6a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -174,7 +176,7 @@ collision_layer = 0
 collision_mask = 56
 script = ExtResource("27_bthv1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+[node name="HurtBox" type="CollisionShape2D" parent="MyHurtBox"]
 shape = SubResource("CapsuleShape2D_n3hqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -187,5 +189,25 @@ drag_top_margin = 0.3
 drag_right_margin = 0.1
 drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Angel" type="TextureRect" parent="HUD"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1864.0
+offset_bottom = 1130.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("28_nt3gd")
+stretch_mode = 2
+
+[node name="Vampire" type="TextureRect" parent="HUD"]
+offset_left = 300.0
+offset_top = 50.0
+offset_right = 2114.0
+offset_bottom = 1130.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("29_f7sdj")
+stretch_mode = 2
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

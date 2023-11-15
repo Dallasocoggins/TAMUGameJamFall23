@@ -39,7 +39,7 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -29.8469)
+position = Vector2(0, -1.12163)
 texture = ExtResource("2_scybk")
 
 [node name="Area2D" type="Area2D" parent="." groups=["item"]]
