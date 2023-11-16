@@ -6,6 +6,8 @@
 size = Vector2(175, 441)
 
 [node name="HurtBox" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
 script = ExtResource("1_jdpen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
