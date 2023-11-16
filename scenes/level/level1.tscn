@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
-[ext_resource type="PackedScene" uid="uid://b8dorty1nqvb7" path="res://scenes/objects/MyEnemy.tscn" id="3_1njad"]
+[ext_resource type="PackedScene" uid="uid://b8dorty1nqvb7" path="res://scenes/CustomNodes/BasicEnemy.tscn" id="3_1njad"]
 [ext_resource type="PackedScene" uid="uid://duqn11y65km6x" path="res://scenes/objects/item.tscn" id="4_x5il5"]
 [ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="5_57l30"]
 [ext_resource type="Texture2D" uid="uid://c3ffd13op718i" path="res://sprites/parasites/vampire.png" id="6_7gy8w"]

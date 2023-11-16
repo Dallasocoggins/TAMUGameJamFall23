@@ -18,6 +18,8 @@ var bonus_jump_count_max:
 
 var vampire_active = false
 
+var disable_movement = false
+
 @export var run_max_speed = 900.0
 @export var run_acceleration = 5000.0
 @export var run_deceleration = 7000.0
@@ -42,7 +44,6 @@ var vampire_active = false
 @export var jump_buffer = 0.1 # If you try to jump not on the floor but land on the floor within this many seconds, you can still jump
 
 #@export var animation_idle_move_threshold = 10.0 # If you are moving slower than this sideways, play the idle animation
-
 
 var last_velocity_sign = 1
 var jump_count_current = bonus_jump_count_max
@@ -87,8 +88,9 @@ func _physics_process(delta):
 		velocity.y = min (velocity.y, terminal_velocity)
 
 	# Handle Jump.
-	if (Input.is_action_just_pressed("jump") and (jump_count_current >= 1 or is_on_floor() or coyote_time_countdown > 0)) \
-		or (jump_buffer_countdown > 0 and is_on_floor()):
+	if ((Input.is_action_just_pressed("jump") and (jump_count_current >= 1 or is_on_floor() or coyote_time_countdown > 0)) \
+		or (jump_buffer_countdown > 0 and is_on_floor())) \
+		and !disable_movement:
 		velocity.y = jump_velocity
 		if (not is_on_floor() and coyote_time_countdown <= 0):
 			jump_count_current -= 1
@@ -105,6 +107,9 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
+	
+	if(disable_movement):
+		direction = 0
 	
 	var current_run_acceleration
 	var current_run_deceleration
@@ -143,15 +148,19 @@ func _physics_process(delta):
 func _process(float) -> void:
 	if  Input.is_action_pressed("ui_up") && Input.is_action_just_pressed("attack"):
 		animation_player.play("attack_up")
+		animation_player.queue("RESET")
 	elif Input.is_action_pressed("ui_down") && Input.is_action_just_pressed("attack") && not is_on_floor():
 		animation_player.play("attack_down")
+		animation_player.queue("RESET")
 	elif Input.is_action_just_pressed("attack"):
 		animation_player.play("attack_side")
+		animation_player.queue("RESET")
 
 
 # This is called when an animation finishes playing
 # We need to change the animation once the attack finshes
 func _on_animation_player_animation_finished(anim_name):
+	disable_movement = false
 	if anim_name != "idle":
 		animation_player.play("idle")
 
@@ -171,3 +180,8 @@ func collide(other):
 				vampire_active = true
 				vampire_hud.show()
 		parent.queue_free()
+
+
+func _on_animation_player_animation_started(anim_name):
+	if anim_name != "idle" and anim_name != "run_right":
+		disable_movement = true
