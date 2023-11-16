@@ -108,9 +108,6 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
 	
-	if(disable_movement):
-		direction = 0
-	
 	var current_run_acceleration
 	var current_run_deceleration
 	var current_turn_acceleration
@@ -133,14 +130,19 @@ func _physics_process(delta):
 		var new_velocity = velocity.x - sign(velocity.x) * delta * acceleration
 		velocity.x = new_velocity if sign(new_velocity) == sign(velocity.x) else 0
 	
-	if (sign(velocity.x) != last_velocity_sign && sign(velocity.x) != 0):
-		sprite.flip_h = !sprite.flip_h
-		last_velocity_sign = sign(velocity.x)
+	if(direction == -1 and not disable_movement):
+		sprite.flip_h = true
+	elif(direction == 1 and not disable_movement):
+		sprite.flip_h = false
 
 	if direction != 0 and animation_player.current_animation == "idle":
 		animation_player.play("run_right")
 	elif direction == 0 and animation_player.current_animation == "run_right":
 		animation_player.play("idle")
+	
+	if(disable_movement):
+		velocity.x = 0
+		velocity.y = 0
 
 	move_and_slide()
 
