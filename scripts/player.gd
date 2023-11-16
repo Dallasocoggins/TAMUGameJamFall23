@@ -134,7 +134,7 @@ func _physics_process(delta):
 		velocity.x = new_velocity if sign(new_velocity) == sign(velocity.x) else 0
 	
 	if (sign(velocity.x) != last_velocity_sign && sign(velocity.x) != 0):
-		sprite.scale.x *= -1
+		sprite.flip_h = !sprite.flip_h
 		last_velocity_sign = sign(velocity.x)
 
 	if direction != 0 and animation_player.current_animation == "idle":
@@ -153,7 +153,10 @@ func _process(float) -> void:
 		animation_player.play("attack_down")
 		animation_player.queue("RESET")
 	elif Input.is_action_just_pressed("attack"):
-		animation_player.play("attack_side")
+		if(sprite.flip_h):
+			animation_player.play("attack_left")
+		else:
+			animation_player.play("attack_side")
 		animation_player.queue("RESET")
 
 
