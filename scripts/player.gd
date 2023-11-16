@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var run_max_speed = 1000.0

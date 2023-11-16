@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ncfc78vywjki"]
+[gd_scene load_steps=23 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
 [ext_resource type="Texture2D" uid="uid://eyq30pihoxfp" path="res://sprites/parry/turnaround/turn_3.png" id="2_8kmu8"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dsjdyv5xmuumd" path="res://sprites/parry/idle right/frame_00003.png" id="11_rl1ug"]
 [ext_resource type="Texture2D" uid="uid://cucfqoagkwg6u" path="res://sprites/parry/idle right/frame_00004.png" id="12_li31c"]
 [ext_resource type="Texture2D" uid="uid://6e8jgkehj48r" path="res://sprites/parry/idle right/frame_00005.png" id="13_4m2xv"]
-[ext_resource type="PackedScene" uid="uid://dfewscjavscte" path="res://scenes/CustomNodes/MyHitBox.tscn" id="14_it14p"]
+[ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="14_pqwby"]
 
 [sub_resource type="Animation" id="Animation_q6a7i"]
 length = 0.001
@@ -210,11 +210,15 @@ _data = {
 "idle": SubResource("Animation_22t58")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebv14"]
+radius = 91.0
+height = 290.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
 radius = 50.0
 height = 284.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_2lgnl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -228,11 +232,13 @@ z_index = 10
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("11_rl1ug")
 
-[node name="MyHitBox" parent="Sprite2D" instance=ExtResource("14_it14p")]
+[node name="MyHitBox" type="Area2D" parent="Sprite2D"]
+script = ExtResource("14_pqwby")
 
-[node name="HitBox" parent="Sprite2D/MyHitBox" index="0"]
+[node name="HitBox" type="CollisionShape2D" parent="Sprite2D/MyHitBox"]
 position = Vector2(486.667, -66.6667)
-rotation = 0.0
+scale = Vector2(3.33333, 3.33333)
+shape = SubResource("CapsuleShape2D_ebv14")
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -251,5 +257,3 @@ drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-
-[editable path="Sprite2D/MyHitBox"]
