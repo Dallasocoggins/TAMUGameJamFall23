@@ -36,6 +36,8 @@ var disable_movement = false
 @export var air_run_deceleration = 1000.0
 @export var air_turn_acceleration = 30000.0
 
+@export var air_attack_max = 1
+
 # TODO: Implement dash
 @export var dash_enabled = false
 @export var dash_speed = 2000.0
@@ -51,6 +53,8 @@ var coyote_time_countdown = 0
 var jump_buffer_countdown = 0
 @onready var sprite = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+
+var air_attack_count_current = air_attack_max
 
 @onready var angel_hud = $HUD/Angel
 @onready var vampire_hud = $HUD/Vampire
@@ -80,6 +84,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		jump_count_current = bonus_jump_count_max
 		coyote_time_countdown = coyote_time
+		air_attack_count_current = air_attack_max
 		
 	# You can't fall faster than terminal velocity
 	if slow_fall_enabled and Input.is_action_pressed("jump"):
@@ -146,20 +151,28 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func can_attack():
+	return is_on_floor() or (air_attack_count_current != 0)
+
+func attack():
+	if not is_on_floor():
+		air_attack_count_current -= 1
+	animation_player.queue("RESET")
 
 func _process(float) -> void:
-	if  Input.is_action_pressed("ui_up") && Input.is_action_just_pressed("attack"):
-		animation_player.play("attack_up")
-		animation_player.queue("RESET")
-	elif Input.is_action_pressed("ui_down") && Input.is_action_just_pressed("attack") && not is_on_floor():
-		animation_player.play("attack_down")
-		animation_player.queue("RESET")
-	elif Input.is_action_just_pressed("attack"):
-		if(sprite.flip_h):
-			animation_player.play("attack_left")
-		else:
-			animation_player.play("attack_side")
-		animation_player.queue("RESET")
+	if can_attack():
+		if  Input.is_action_pressed("ui_up") && Input.is_action_just_pressed("attack"):
+			animation_player.play("attack_up")
+			attack()
+		elif Input.is_action_pressed("ui_down") && Input.is_action_just_pressed("attack") && not is_on_floor():
+			animation_player.play("attack_down")
+			attack()
+		elif Input.is_action_just_pressed("attack"):
+			if(sprite.flip_h):
+				animation_player.play("attack_left")
+			else:
+				animation_player.play("attack_side")
+			attack()
 
 
 # This is called when an animation finishes playing
