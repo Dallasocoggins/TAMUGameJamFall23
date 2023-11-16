@@ -20,6 +20,9 @@ var vampire_active = false
 
 var disable_movement = false
 
+@export var max_health = 100.0
+var curr_health = max_health
+
 @export var run_max_speed = 900.0
 @export var run_acceleration = 5000.0
 @export var run_deceleration = 7000.0
@@ -203,3 +206,9 @@ func collide(other):
 func _on_animation_player_animation_started(anim_name):
 	if anim_name != "idle" and anim_name != "run_right":
 		disable_movement = true
+		
+func take_damage(damage) -> void:
+	curr_health -= damage
+	if(curr_health <= 0):
+		print("Dead")
+	print("Did Damage")

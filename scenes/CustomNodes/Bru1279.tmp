@@ -90,10 +90,17 @@ sprite = NodePath("../../Sprite2D")
 [node name="idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_hd1ep")
 enemy = NodePath("../..")
+vision_dist = null
+wander_time_max = null
+wander_time_min = null
+wait_time_max = null
+wait_time_min = null
+walking_speed = null
 
 [node name="attack" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "animation_player")]
 script = ExtResource("5_64dec")
 enemy = NodePath("../..")
+cooldown = null
 animation_player = NodePath("../../AnimationPlayer")
 
 [node name="MyHurtBox" type="Area2D" parent="."]

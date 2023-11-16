@@ -17,7 +17,7 @@ var player : CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _enter():
-	print_debug("Hey1")
+	#print_debug("Hey1")
 	player = get_tree().get_first_node_in_group("Player")
 
 	
@@ -47,5 +47,6 @@ func _physics_update(delta):
 		wait_time_left = randf_range(wait_time_min, wait_time_max)
 
 func _exit():
-	print_debug("Hey2")
+	#print_debug("Hey2")
+	pass
 	

@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
-[ext_resource type="PackedScene" uid="uid://b8dorty1nqvb7" path="res://scenes/CustomNodes/BasicEnemy.tscn" id="3_1njad"]
 [ext_resource type="PackedScene" uid="uid://duqn11y65km6x" path="res://scenes/objects/item.tscn" id="4_x5il5"]
 [ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="5_57l30"]
 [ext_resource type="Texture2D" uid="uid://c3ffd13op718i" path="res://sprites/parasites/vampire.png" id="6_7gy8w"]
+[ext_resource type="PackedScene" uid="uid://rs7bbrinx0gv" path="res://scenes/CustomNodes/BruiserEnemy.tscn" id="6_j3tfy"]
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_6hvob")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_6hvob")]
 position = Vector2(231, -305)
 
 [node name="TemporaryPlatform" parent="." instance=ExtResource("2_y1ymi")]
@@ -55,9 +55,6 @@ scale = Vector2(64.64, 1)
 position = Vector2(0, -2235)
 scale = Vector2(64.64, 1)
 
-[node name="MyEnemy" parent="." instance=ExtResource("3_1njad")]
-position = Vector2(0, -194)
-
 [node name="Angel" parent="." instance=ExtResource("4_x5il5")]
 position = Vector2(-416, -193)
 texture = ExtResource("5_57l30")
@@ -69,3 +66,6 @@ position = Vector2(1223, -166)
 texture = ExtResource("6_7gy8w")
 spriteScale = Vector2(0.08, 0.08)
 type = 1
+
+[node name="BruiserEnemy" parent="." instance=ExtResource("6_j3tfy")]
+position = Vector2(-1113, -446)
