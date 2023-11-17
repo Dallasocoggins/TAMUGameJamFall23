@@ -2,10 +2,12 @@ class_name MyHurtBox
 extends Area2D
 
 func _init() -> void:
-	area_entered.connect(_on_area_entered)
+	pass
 
 	
 func _on_area_entered(other) -> void:
+	print_debug("Why")
+	print_debug(other.owner.name)
 	if other == null:
 		return
 	

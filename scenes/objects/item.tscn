@@ -31,7 +31,6 @@ radius = 69.0072
 [node name="Item" type="Node2D" groups=["item"]]
 script = ExtResource("1_bro8i")
 texture = ExtResource("2_scybk")
-type = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -39,7 +38,7 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -1.12163)
+position = Vector2(0, -5.0115)
 texture = ExtResource("2_scybk")
 
 [node name="Area2D" type="Area2D" parent="." groups=["item"]]

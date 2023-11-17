@@ -478,7 +478,7 @@ height = 305.49
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 21
+collision_mask = 12
 script = ExtResource("1_2lgnl")
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
@@ -496,7 +496,7 @@ scale = Vector2(0.282, 0.282)
 texture = ExtResource("13_355wr")
 
 [node name="MyHurtBox" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 56
 script = ExtResource("27_bthv1")
 
@@ -539,7 +539,7 @@ stretch_mode = 2
 [node name="UpHitBox" type="Area2D" parent="HitBoxes"]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("3_jmnur")
 
 [node name="HitBox" type="CollisionShape2D" parent="HitBoxes/UpHitBox"]
@@ -552,7 +552,7 @@ disabled = true
 [node name="DownHitBox" type="Area2D" parent="HitBoxes"]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("3_jmnur")
 
 [node name="HitBox" type="CollisionShape2D" parent="HitBoxes/DownHitBox"]
@@ -565,7 +565,7 @@ disabled = true
 [node name="LeftHitBox" type="Area2D" parent="HitBoxes"]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("3_jmnur")
 
 [node name="HitBox" type="CollisionShape2D" parent="HitBoxes/LeftHitBox"]
@@ -577,7 +577,7 @@ disabled = true
 [node name="RightHitBox" type="Area2D" parent="HitBoxes"]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("3_jmnur")
 
 [node name="HitBox" type="CollisionShape2D" parent="HitBoxes/RightHitBox"]
@@ -588,3 +588,4 @@ disabled = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
+[connection signal="area_entered" from="MyHurtBox" to="MyHurtBox" method="_on_area_entered"]

@@ -59,7 +59,6 @@ scale = Vector2(64.64, 1)
 position = Vector2(-416, -193)
 texture = ExtResource("5_57l30")
 spriteScale = Vector2(0.1, 0.1)
-type = 0
 
 [node name="Vampire" parent="." instance=ExtResource("4_x5il5")]
 position = Vector2(1223, -166)

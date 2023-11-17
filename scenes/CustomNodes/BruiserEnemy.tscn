@@ -55,9 +55,9 @@ size = Vector2(467, 441)
 size = Vector2(189, 442)
 
 [node name="BruiserEnemy" type="CharacterBody2D"]
-collision_layer = 9
-collision_mask = 5
-platform_floor_layers = 4294901823
+collision_layer = 8
+collision_mask = 6
+platform_floor_layers = 4294902015
 script = ExtResource("1_jg17y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -71,6 +71,8 @@ shape = SubResource("CapsuleShape2D_4j10g")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="MyHitBox" type="Area2D" parent="Sprite2D"]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("2_87v1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox"]
@@ -98,6 +100,8 @@ sprite = NodePath("../../Sprite2D")
 animation_player = NodePath("../../AnimationPlayer")
 
 [node name="MyHurtBox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("4_xsnvk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
