@@ -1,11 +1,10 @@
 class_name FollowGround
 extends State
 
-@export var enemy : CharacterBody2D
+@export var enemy : BasicEnemy
 @export var move_speed := 400.0
 @export var vision_dist := 1500.0
 @export var attack_range := 400.0
-var facing_right = true
 var player : CharacterBody2D
 
 @export var sprite : Sprite2D
@@ -33,8 +32,8 @@ func _physics_update(delta : float):
 	else:
 		enemy.velocity.x = -move_speed
 	
-	if(direction.x < 0 and !facing_right) or (direction.x > 0 and facing_right):
-		facing_right = !facing_right
+	if(direction.x < 0 and !enemy.is_facing_right()) or (direction.x > 0 and enemy.is_facing_right()):
+		enemy.flip_is_facing_right()
 		sprite.scale.x *= -1
 	
 		

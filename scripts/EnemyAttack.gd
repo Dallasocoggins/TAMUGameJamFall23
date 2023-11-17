@@ -1,13 +1,14 @@
 class_name EnemyAttack
 extends State
 
-@export var enemy : CharacterBody2D
+@export var enemy : BasicEnemy
 @export var cooldown = 3.0
 @export var attack_range := 400.0
 var player : CharacterBody2D
 var cooldown_left = cooldown
 var attack_over = false
-var facing_right = true
+
+@export var sprite : Sprite2D
 
 @export var animation_player : AnimationPlayer
 
@@ -24,9 +25,13 @@ func _update(delta):
 	if(attack_over):
 		cooldown_left -= delta
 	
+	
 	if(cooldown_left <= 0 and direction.length() > attack_range):
 		Transitioned.emit(self, "follow")
 	elif(cooldown_left <= 0):
+		if(direction.x < 0 and !enemy.is_facing_right()) or (direction.x > 0 and enemy.is_facing_right()):
+			enemy.flip_is_facing_right()
+			sprite.scale.x *= -1
 		attack_over = false
 		cooldown_left = cooldown
 		animation_player.play("attack")

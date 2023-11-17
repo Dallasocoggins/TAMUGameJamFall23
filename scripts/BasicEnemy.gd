@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var health_points = 100
 @export var attack_range := 400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var facing_right = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,4 +26,10 @@ func take_damage(damage) -> void:
 	if(health_points <= 0):
 		print("Dead")
 	print("Did Damage")
+
+func is_facing_right() -> bool:
+	return facing_right
+
+func flip_is_facing_right():
+	facing_right = !facing_right
 
