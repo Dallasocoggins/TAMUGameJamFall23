@@ -164,10 +164,10 @@ func attack():
 
 func _process(float) -> void:
 	if can_attack():
-		if  Input.is_action_pressed("ui_up") && Input.is_action_just_pressed("attack"):
+		if  Input.is_action_pressed("look_up") && Input.is_action_just_pressed("attack"):
 			animation_player.play("attack_up")
 			attack()
-		elif Input.is_action_pressed("ui_down") && Input.is_action_just_pressed("attack") && not is_on_floor():
+		elif Input.is_action_pressed("look_down") && Input.is_action_just_pressed("attack") && not is_on_floor():
 			animation_player.play("attack_down")
 			attack()
 		elif Input.is_action_just_pressed("attack"):
