@@ -50,6 +50,7 @@ var curr_health = max_health
 
 #@export var animation_idle_move_threshold = 10.0 # If you are moving slower than this sideways, play the idle animation
 
+
 var last_velocity_sign = 1
 var jump_count_current = bonus_jump_count_max
 var coyote_time_countdown = 0
@@ -62,11 +63,12 @@ var air_attack_count_current = air_attack_max
 @onready var angel_hud = $HUD/Angel
 @onready var vampire_hud = $HUD/Vampire
 
+@onready var drop_raycast = $RayCast2D
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var Item = preload("res://scripts/item.gd")
-
 
 func _ready():
 	animation_player.play("idle")
@@ -167,9 +169,12 @@ func _process(float) -> void:
 		if  Input.is_action_pressed("look_up") && Input.is_action_just_pressed("attack"):
 			animation_player.play("attack_up")
 			attack()
-		elif Input.is_action_pressed("look_down") && Input.is_action_just_pressed("attack") && not is_on_floor():
-			animation_player.play("attack_down")
-			attack()
+		elif Input.is_action_pressed("look_down"):
+			if(Input.is_action_just_pressed("attack") && not is_on_floor()):
+				animation_player.play("attack_down")
+				attack()
+			else:
+				drop()
 		elif Input.is_action_just_pressed("attack"):
 			if(sprite.flip_h):
 				animation_player.play("attack_left")
@@ -212,3 +217,12 @@ func take_damage(damage) -> void:
 	if(curr_health <= 0):
 		print("Dead")
 	print("Did Damage")
+	
+func drop():
+	print_debug("attempt to drop")
+	var result = drop_raycast.get_collider()
+	if result && result is CollisionObject2D:
+		print_debug("Successful raycast")
+		result as CollisionObject2D
+		if result.is_shape_owner_one_way_collision_enabled(result.get_shape_owners()[0]):
+			position.y += 1
