@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://slyhluoya6p7"]
+[gd_scene load_steps=8 format=3 uid="uid://slyhluoya6p7"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="5_57l30"]
 [ext_resource type="Texture2D" uid="uid://c3ffd13op718i" path="res://sprites/parasites/vampire.png" id="6_7gy8w"]
 [ext_resource type="PackedScene" uid="uid://rs7bbrinx0gv" path="res://scenes/CustomNodes/BruiserEnemy.tscn" id="6_j3tfy"]
+[ext_resource type="PackedScene" uid="uid://bm4ldjy2eb2yw" path="res://scenes/CustomNodes/FlyingEnemy.tscn" id="7_ovyxm"]
 
 [node name="World" type="Node2D"]
 
@@ -68,3 +69,6 @@ type = 1
 
 [node name="BruiserEnemy" parent="." instance=ExtResource("6_j3tfy")]
 position = Vector2(-1113, -446)
+
+[node name="FlyingEnemy" parent="." instance=ExtResource("7_ovyxm")]
+position = Vector2(866, -738)

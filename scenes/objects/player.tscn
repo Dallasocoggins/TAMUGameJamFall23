@@ -468,9 +468,9 @@ _data = {
 radius = 45.0
 height = 250.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player", "player_root"]]
 collision_layer = 2
-collision_mask = 12
+collision_mask = 4
 script = ExtResource("1_2lgnl")
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
@@ -527,45 +527,45 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("29_f7sdj")
 stretch_mode = 2
 
-[node name="HitBoxes" type="Node2D" parent="."]
+[node name="HitBoxes" type="Node2D" parent="." groups=["player"]]
 
-[node name="UpHitBox" type="Area2D" parent="HitBoxes"]
+[node name="UpHitBox" type="Area2D" parent="HitBoxes" groups=["player"]]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("3_jmnur")
 
-[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/UpHitBox"]
+[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/UpHitBox" groups=["player"]]
 polygon = PackedVector2Array(-95.7447, -453.901, 99.2908, -453.901, 326.241, -269.504, 255.319, -709.22, -3.5461, -826.241, -287.234, -702.128, -329.787, -262.411)
 disabled = true
 
-[node name="DownHitBox" type="Area2D" parent="HitBoxes"]
+[node name="DownHitBox" type="Area2D" parent="HitBoxes" groups=["player"]]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("3_jmnur")
 
-[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/DownHitBox"]
+[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/DownHitBox" groups=["player"]]
 polygon = PackedVector2Array(0, 797.872, 471.631, 560.284, 457.447, 70.922, 74.4681, 446.809, -70.922, 446.809, -468.085, 85.1064, -468.085, 585.106)
 disabled = true
 
-[node name="LeftHitBox" type="Area2D" parent="HitBoxes"]
+[node name="LeftHitBox" type="Area2D" parent="HitBoxes" groups=["player"]]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("3_jmnur")
 
-[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/LeftHitBox"]
+[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/LeftHitBox" groups=["player"]]
 polygon = PackedVector2Array(202.128, -535.461, -184.397, -390.071, -173.759, 390.071, 99.2908, 503.546, -574.468, 503.546, -762.411, -106.383, -503.546, -595.745, 106.383, -709.22)
 disabled = true
 
-[node name="RightHitBox" type="Area2D" parent="HitBoxes"]
+[node name="RightHitBox" type="Area2D" parent="HitBoxes" groups=["player"]]
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
 script = ExtResource("3_jmnur")
 
-[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/RightHitBox"]
+[node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/RightHitBox" groups=["player"]]
 polygon = PackedVector2Array(-202.128, -535.461, 184.397, -390.071, 173.759, 390.071, -99.291, 503.546, 574.468, 503.546, 762.411, -106.383, 503.546, -595.745, -106.383, -709.22)
 disabled = true
 

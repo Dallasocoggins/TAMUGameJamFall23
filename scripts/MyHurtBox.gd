@@ -6,7 +6,6 @@ func _init() -> void:
 
 	
 func _on_area_entered(other) -> void:
-	print_debug("Why")
 	print_debug(other.owner.name)
 	if other == null:
 		return
@@ -16,7 +15,7 @@ func _on_area_entered(other) -> void:
 		
 		print_debug("hitbox hits hurtbox")
 		
-		if owner.has_method("take_damage"):
+		if owner.has_method("take_damage") && !other.is_in_group(owner.get_groups().back()):
 			print_debug("Did " + str(other.damage) + " damage")
 			owner.take_damage(other.damage)
 	elif owner.has_method("collide"):

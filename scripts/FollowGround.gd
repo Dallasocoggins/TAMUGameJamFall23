@@ -12,13 +12,13 @@ var player : CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _enter():
-	player = get_tree().get_first_node_in_group("Player")
+	player = get_tree().get_first_node_in_group("player_root")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_update(delta : float):
 	if(!player):
-		player = get_tree().get_first_node_in_group("Player")
+		player = get_tree().get_first_node_in_group("player_root")
 	var direction = enemy.global_position - player.global_position
 	#print_debug(direction.length())
 	

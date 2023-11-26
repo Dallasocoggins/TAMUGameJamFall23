@@ -14,4 +14,7 @@ func _update(_delta: float):
 
 func _physics_update(_delta: float):
 	pass
+	
+func _take_damage():
+	pass
 
