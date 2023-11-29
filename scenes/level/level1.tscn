@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://slyhluoya6p7"]
+[gd_scene load_steps=10 format=3 uid="uid://slyhluoya6p7"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
@@ -8,8 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://rs7bbrinx0gv" path="res://scenes/CustomNodes/BruiserEnemy.tscn" id="6_j3tfy"]
 [ext_resource type="PackedScene" uid="uid://bm4ldjy2eb2yw" path="res://scenes/CustomNodes/FlyingEnemy.tscn" id="7_ovyxm"]
 [ext_resource type="PackedScene" uid="uid://d2wj1bgl7bs2t" path="res://scenes/temporary_assets/temporary_one_way_platform.tscn" id="8_ovett"]
+[ext_resource type="Texture2D" uid="uid://bnpl4x2g6eplk" path="res://sprites/misc/background.png" id="9_5dd8q"]
 
 [node name="World" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_5dd8q")
+expand_mode = 2
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_6hvob")]
 position = Vector2(231, -305)

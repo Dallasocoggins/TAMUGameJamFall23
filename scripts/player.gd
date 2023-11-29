@@ -228,6 +228,8 @@ func pogo():
 		return
 	
 	pogo_countdown = pogo_cooldown_time
+	jump_count_current = bonus_jump_count_max
+	air_attack_count_current = air_attack_max
 	disable_movement = false
 	velocity.y = min(velocity.y, pogo_velocity)
 	
