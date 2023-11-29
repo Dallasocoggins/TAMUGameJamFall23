@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bxhgyr2h3edrt"]
+[gd_scene load_steps=2 format=3 uid="uid://bxhgyr2h3edrt"]
+
+[ext_resource type="Script" path="res://scenes/objects/door.gd" id="1_lm3pt"]
 
 [node name="door" type="Node2D"]
+script = ExtResource("1_lm3pt")
