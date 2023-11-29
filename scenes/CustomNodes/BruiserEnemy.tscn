@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://rs7bbrinx0gv"]
+[gd_scene load_steps=15 format=3 uid="uid://rs7bbrinx0gv"]
 
 [ext_resource type="Script" path="res://scripts/BasicEnemy.gd" id="1_jg17y"]
 [ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="2_87v1a"]
@@ -49,7 +49,10 @@ radius = 85.0
 height = 432.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04o2e"]
-size = Vector2(467, 441)
+size = Vector2(251, 441)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb75g"]
+size = Vector2(166, 416)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsbx"]
 size = Vector2(189, 442)
@@ -79,11 +82,20 @@ collision_mask = 4
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("2_87v1a")
+damage = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
-position = Vector2(341.5, 3.5)
+position = Vector2(233.5, 3.5)
 shape = SubResource("RectangleShape2D_04o2e")
 disabled = true
+
+[node name="MyHitBox2" type="Area2D" parent="Sprite2D"]
+script = ExtResource("2_87v1a")
+damage = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox2"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_vb75g")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_0e4ld")

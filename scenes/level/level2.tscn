@@ -73,6 +73,46 @@ scale = Vector2(10, 0.4)
 position = Vector2(-6300, -2749)
 scale = Vector2(10, 0.4)
 
+[node name="TemporaryPlatform23" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -3198)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform37" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -3518)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform38" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -3881)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform39" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -4233)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform40" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -2910)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform41" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -3198)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform42" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -3518)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform43" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-892, -4836)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform44" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-892, -4529)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform45" parent="Room1" instance=ExtResource("8_weesx")]
+position = Vector2(-905, -2910)
+scale = Vector2(10, 0.4)
+
 [node name="TemporaryPlatform14" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(-3038, -2599)
 scale = Vector2(1, 20)
@@ -95,31 +135,47 @@ position = Vector2(4819, -3920)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform28" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(4836, -6514)
+position = Vector2(4731, -6460)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform29" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(1141, -8074)
+position = Vector2(-2040, -7219)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform30" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(-4470, -9464)
+position = Vector2(-2040, -9870)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform31" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(-4470, -9464)
+position = Vector2(1807, -7321)
+scale = Vector2(1, 26.268)
+
+[node name="TemporaryPlatform32" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(1807, -9972)
+scale = Vector2(1, 26.268)
+
+[node name="TemporaryPlatform33" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(4749, -9075)
+scale = Vector2(1, 26.268)
+
+[node name="TemporaryPlatform34" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(4749, -11726)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform22" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(3540, -5202)
 scale = Vector2(26, 1)
 
-[node name="TemporaryPlatform23" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(939, -5202)
+[node name="TemporaryPlatform24" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(939, -5341)
 scale = Vector2(26, 1)
 
-[node name="TemporaryPlatform24" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(939, -5202)
+[node name="TemporaryPlatform35" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(-713, -5963)
+scale = Vector2(26, 1)
+
+[node name="TemporaryPlatform36" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(1878, -5963)
 scale = Vector2(26, 1)
 
 [node name="TemporaryPlatform27" parent="Room1" instance=ExtResource("2_tov3a")]
@@ -190,6 +246,51 @@ position = Vector2(888, -3524)
 [node name="FlyingEnemy6" parent="Room2" instance=ExtResource("7_mee4l")]
 position = Vector2(3253, -3817)
 
+[node name="FlyingEnemy10" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(-6384, -8652)
+
+[node name="FlyingEnemy11" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(-5697, -8547)
+
+[node name="FlyingEnemy12" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(-2934, -7892)
+
+[node name="FlyingEnemy15" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(-3302, -7194)
+
+[node name="FlyingEnemy14" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(-3785, -7612)
+
+[node name="FlyingEnemy13" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(-4823, -8502)
+
+[node name="FlyingEnemy16" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(2610, -8166)
+
+[node name="FlyingEnemy17" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(3297, -8061)
+
+[node name="FlyingEnemy18" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(4171, -8016)
+
+[node name="FlyingEnemy19" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(2474, -7465)
+
+[node name="FlyingEnemy20" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(3161, -7360)
+
+[node name="FlyingEnemy21" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(4035, -7315)
+
+[node name="FlyingEnemy22" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(2474, -7465)
+
+[node name="FlyingEnemy23" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(3161, -7360)
+
+[node name="FlyingEnemy24" parent="Room2" instance=ExtResource("7_mee4l")]
+position = Vector2(4035, -7315)
+
 [node name="BruiserEnemy3" parent="Room2" instance=ExtResource("6_nfqru")]
 position = Vector2(-6512, -4358)
 
@@ -205,8 +306,35 @@ position = Vector2(-3164, -5684)
 [node name="BruiserEnemy10" parent="Room2" instance=ExtResource("6_nfqru")]
 position = Vector2(-2477, -5684)
 
+[node name="BruiserEnemy11" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-5662, -10311)
+
+[node name="BruiserEnemy12" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-4975, -10311)
+
+[node name="BruiserEnemy13" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-6100, -10296)
+
+[node name="BruiserEnemy14" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-5413, -10296)
+
+[node name="BruiserEnemy15" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-6447, -10281)
+
+[node name="BruiserEnemy16" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-5863, -10292)
+
+[node name="BruiserEnemy17" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-5171, -10292)
+
+[node name="BruiserEnemy18" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-4431, -10281)
+
 [node name="BruiserEnemy8" parent="Room2" instance=ExtResource("6_nfqru")]
 position = Vector2(-4772, -6078)
+
+[node name="BruiserEnemy19" parent="Room2" instance=ExtResource("6_nfqru")]
+position = Vector2(-4915, -7660)
 
 [node name="BruiserEnemy7" parent="Room2" instance=ExtResource("6_nfqru")]
 position = Vector2(-6509, -5767)
@@ -231,40 +359,68 @@ position = Vector2(-5025, -5804)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform31" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1068, -3059)
+position = Vector2(-3930, -6081)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform32" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1087, -3439)
+position = Vector2(-3949, -6461)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform33" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1116, -3863)
+position = Vector2(-3978, -6885)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform34" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1128, -4378)
+position = Vector2(-3990, -7400)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform35" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1128, -4821)
-scale = Vector2(10, 0.4)
-
-[node name="TemporaryPlatform36" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1152, -5288)
+position = Vector2(-3990, -7843)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform37" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1176, -5720)
+position = Vector2(-3919, -8253)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform38" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-1176, -6223)
+position = Vector2(-3938, -8633)
 scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform41" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-3967, -9057)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform36" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-1126, -5357)
+scale = Vector2(16, 0.4)
 
 [node name="TemporaryPlatform28" parent="Room2" instance=ExtResource("8_weesx")]
 position = Vector2(-6287, -6353)
 scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform42" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-5040, -7395)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform44" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-5040, -7395)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform46" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-4945, -9374)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform47" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-4965, -9046)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform43" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-5228, -9871)
+scale = Vector2(30, 0.4)
+
+[node name="TemporaryPlatform45" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-2228, -9871)
+scale = Vector2(30, 0.4)
 
 [node name="TemporaryPlatform25" parent="Room2" instance=ExtResource("8_weesx")]
 position = Vector2(-5025, -4481)
@@ -286,11 +442,13 @@ scale = Vector2(1, 20)
 position = Vector2(-4475, -7148)
 scale = Vector2(1, 20)
 
+[node name="TemporaryPlatform40" parent="Room2" instance=ExtResource("2_tov3a")]
+position = Vector2(-4475, -8899)
+scale = Vector2(1, 20)
+
 [node name="TemporaryPlatform39" parent="Room2" instance=ExtResource("2_tov3a")]
 position = Vector2(-6763, -9403)
 scale = Vector2(1, 20)
 
-[node name="TemporaryPlatform40" parent="Room2" instance=ExtResource("2_tov3a")]
-position = Vector2(-3435, -7413)
-rotation = 1.5708
-scale = Vector2(1, 20)
+[node name="Item" parent="." instance=ExtResource("3_i6unw")]
+position = Vector2(-3326, -10020)
