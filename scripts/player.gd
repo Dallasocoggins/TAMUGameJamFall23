@@ -18,6 +18,8 @@ var bonus_jump_count_max:
 
 var vampire_active = false
 
+var has_key = false
+
 var disable_movement = false
 
 @export var max_health = 100.0
@@ -65,6 +67,7 @@ var pogo_countdown = 0
 
 @onready var angel_hud = $HUD/Angel
 @onready var vampire_hud = $HUD/Vampire
+@onready var key_hud = $HUD/Key
 
 @onready var drop_raycast = $RayCast2D
 
@@ -77,6 +80,7 @@ func _ready():
 	animation_player.play("idle")
 	angel_hud.hide()
 	vampire_hud.hide()
+	key_hud.hide()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -210,6 +214,10 @@ func collide(other):
 				print_debug("got the vampire parasite")
 				vampire_active = true
 				vampire_hud.show()
+			Item.ItemType.KEY:
+				print_debug("got the key")
+				has_key = true
+				key_hud.show()
 		parent.queue_free()
 
 
@@ -221,6 +229,7 @@ func take_damage(damage) -> void:
 	curr_health -= damage
 	if(curr_health <= 0):
 		print("Dead")
+		get_tree().reload_current_scene()
 	print("Did Damage")
 
 func pogo():

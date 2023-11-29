@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://ncfc78vywjki"]
+[gd_scene load_steps=55 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
 [ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="3_jmnur"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cpv8nqh4a8hwj" path="res://sprites/parry/slice_up/frame_00002.png" id="37_0kf1k"]
 [ext_resource type="Texture2D" uid="uid://o0rchekk5pmv" path="res://sprites/parry/slice_up/frame_00003.png" id="38_n0kkf"]
 [ext_resource type="Texture2D" uid="uid://ra1an3wprubo" path="res://sprites/parry/slice_up/frame_00004.png" id="39_oqeph"]
+[ext_resource type="Texture2D" uid="uid://q0x6q4tt7d28" path="res://sprites/temporary_assets/icon.svg" id="40_2a830"]
 [ext_resource type="Texture2D" uid="uid://lnao4lej4jey" path="res://sprites/parry/slice_up/frame_00005.png" id="40_asgsq"]
 [ext_resource type="Texture2D" uid="uid://cs4jjp2vpuhnm" path="res://sprites/parry/slice_up/frame_00006.png" id="41_rq44j"]
 [ext_resource type="Script" path="res://scripts/PlayerPogoHitBox.gd" id="46_oxqjw"]
@@ -509,6 +510,15 @@ drag_bottom_margin = 0.3
 editor_draw_drag_margin = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Key" type="TextureRect" parent="HUD"]
+offset_left = 470.0
+offset_top = -9.0
+offset_right = 2906.0
+offset_bottom = 2427.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("40_2a830")
+expand_mode = 2
 
 [node name="Angel" type="TextureRect" parent="HUD"]
 offset_left = 50.0
