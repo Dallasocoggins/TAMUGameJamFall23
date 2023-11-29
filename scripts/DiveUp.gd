@@ -44,6 +44,5 @@ func _exit():
 	#print_debug("Hey2")
 	if(direction.x < 0 and !enemy.is_facing_right()) or (direction.x > 0 and enemy.is_facing_right()):
 		enemy.flip_is_facing_right()
-		sprite.scale.x *= -1
 	pass
 
