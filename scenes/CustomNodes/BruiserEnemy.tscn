@@ -54,11 +54,12 @@ size = Vector2(467, 441)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsbx"]
 size = Vector2(189, 442)
 
-[node name="BruiserEnemy" type="CharacterBody2D"]
+[node name="BruiserEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sm") groups=["enemy"]]
 collision_layer = 8
-collision_mask = 6
+collision_mask = 4
 platform_floor_layers = 4294902015
 script = ExtResource("1_jg17y")
+sm = NodePath("StateMachine")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -70,12 +71,12 @@ shape = SubResource("CapsuleShape2D_4j10g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="MyHitBox" type="Area2D" parent="Sprite2D"]
+[node name="MyHitBox" type="Area2D" parent="Sprite2D" groups=["enemy"]]
 collision_layer = 8
-collision_mask = 8
+collision_mask = 2
 script = ExtResource("2_87v1a")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
 position = Vector2(341.5, 3.5)
 shape = SubResource("RectangleShape2D_04o2e")
 disabled = true
@@ -99,12 +100,12 @@ enemy = NodePath("../..")
 sprite = NodePath("../../Sprite2D")
 animation_player = NodePath("../../AnimationPlayer")
 
-[node name="MyHurtBox" type="Area2D" parent="."]
+[node name="MyHurtBox" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 8
-collision_mask = 8
+collision_mask = 2
 script = ExtResource("4_xsnvk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" groups=["enemy"]]
 position = Vector2(-2.5, 3)
 shape = SubResource("RectangleShape2D_1dsbx")
 

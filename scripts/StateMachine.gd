@@ -45,3 +45,9 @@ func _on_child_transition(state, new_state_name):
 	
 	current_state = new_state
 	print_debug(current_state)
+	
+func _take_damage():
+	print_debug("SM _take_damage")
+	if(current_state):
+		current_state._take_damage()
+
