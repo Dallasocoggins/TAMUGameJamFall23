@@ -1,5 +1,101 @@
-[gd_scene format=3 uid="uid://dao8jrrihsfyj"]
+[gd_scene load_steps=18 format=3 uid="uid://dao8jrrihsfyj"]
 
-[node name="main_menu" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dsq6lcuhogagq" path="res://sprites/ui_ux/Main Menu/mainMenu_Background.jpg" id="1_q3fgl"]
+[ext_resource type="Texture2D" uid="uid://bvp8vhoy301bk" path="res://sprites/ui_ux/Main Menu/mainMenu_Normal_0000_Humanity’s-Bargain.png" id="2_ga2vr"]
+[ext_resource type="Texture2D" uid="uid://dejeiaka4rnon" path="res://sprites/ui_ux/Main Menu/Normal Buttons/mainMenu_Normal_0004s_0000_Play.png" id="2_tlg0h"]
+[ext_resource type="Texture2D" uid="uid://dijorjyn0k6sk" path="res://sprites/ui_ux/Main Menu/Hovered-Clicked Buttons/mainMenu_Hovered_0004s_0000_Play.png" id="3_d24rl"]
+[ext_resource type="Script" path="res://scripts/ui_ux/main_menu/Play.gd" id="4_8ssv6"]
+[ext_resource type="Texture2D" uid="uid://bqhtmq05j2dyp" path="res://sprites/ui_ux/Main Menu/Normal Buttons/mainMenu_Normal_0003s_0000_How-To-Play.png" id="4_md560"]
+[ext_resource type="Texture2D" uid="uid://0r1a8hl55ipp" path="res://sprites/ui_ux/Main Menu/Hovered-Clicked Buttons/mainMenu_Hovered_0003s_0000_How-To-Play.png" id="5_1qvvk"]
+[ext_resource type="Texture2D" uid="uid://dgpqo1ragwl0i" path="res://sprites/ui_ux/Main Menu/Hovered-Clicked Buttons/mainMenu_Hovered_0001s_0000_Credits.png" id="5_amm58"]
+[ext_resource type="Texture2D" uid="uid://bstkg5pr8higc" path="res://sprites/ui_ux/Main Menu/Normal Buttons/mainMenu_Normal_0002s_0000_Options.png" id="6_oa6fl"]
+[ext_resource type="Script" path="res://scripts/ui_ux/main_menu/HowToPlay.gd" id="6_rgimu"]
+[ext_resource type="Texture2D" uid="uid://dowjhdop823vp" path="res://sprites/ui_ux/Main Menu/Hovered-Clicked Buttons/mainMenu_Hovered_0002s_0000_Options.png" id="7_ke11x"]
+[ext_resource type="Script" path="res://scripts/ui_ux/main_menu/Options.gd" id="8_2uc3d"]
+[ext_resource type="Texture2D" uid="uid://bwae4p8yd17hl" path="res://sprites/ui_ux/Main Menu/Normal Buttons/mainMenu_Normal_0001s_0000_Credits.png" id="8_8d5el"]
+[ext_resource type="Texture2D" uid="uid://dtfbwoctan2n1" path="res://sprites/ui_ux/Main Menu/Normal Buttons/mainMenu_Normal_0000s_0000_Quit.png" id="10_cflfr"]
+[ext_resource type="Script" path="res://scripts/ui_ux/main_menu/Credits.gd" id="10_vacup"]
+[ext_resource type="Texture2D" uid="uid://eyjh5y20jksk" path="res://sprites/ui_ux/Main Menu/Hovered-Clicked Buttons/mainMenu_Hovered_0000s_0000_Quit.png" id="11_k6aro"]
+[ext_resource type="Script" path="res://scripts/ui_ux/main_menu/Quit.gd" id="12_gl5fa"]
+
+[node name="MainMenu" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_q3fgl")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_ga2vr")
+stretch_mode = 5
+
+[node name="Spacing" type="Control" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+texture_normal = ExtResource("2_tlg0h")
+texture_pressed = ExtResource("3_d24rl")
+texture_hover = ExtResource("3_d24rl")
+stretch_mode = 3
+script = ExtResource("4_8ssv6")
+
+[node name="HowToPlay" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+texture_normal = ExtResource("4_md560")
+texture_pressed = ExtResource("5_1qvvk")
+texture_hover = ExtResource("5_1qvvk")
+stretch_mode = 3
+script = ExtResource("6_rgimu")
+
+[node name="Options" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+texture_normal = ExtResource("6_oa6fl")
+texture_pressed = ExtResource("7_ke11x")
+texture_hover = ExtResource("7_ke11x")
+stretch_mode = 3
+script = ExtResource("8_2uc3d")
+
+[node name="Credits" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+texture_normal = ExtResource("8_8d5el")
+texture_pressed = ExtResource("5_amm58")
+texture_hover = ExtResource("5_amm58")
+stretch_mode = 3
+script = ExtResource("10_vacup")
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 125)
+layout_mode = 2
+texture_normal = ExtResource("10_cflfr")
+texture_pressed = ExtResource("11_k6aro")
+texture_hover = ExtResource("11_k6aro")
+stretch_mode = 3
+script = ExtResource("12_gl5fa")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Play" to="CanvasLayer/VBoxContainer/Play" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HowToPlay" to="CanvasLayer/VBoxContainer/HowToPlay" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="CanvasLayer/VBoxContainer/Options" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Credits" to="CanvasLayer/VBoxContainer/Credits" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="CanvasLayer/VBoxContainer/Quit" method="_on_pressed"]

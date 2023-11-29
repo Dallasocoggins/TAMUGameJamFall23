@@ -27,11 +27,16 @@ config/icon="res://sprites/temporary_assets/turn_2.png"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="Humanitys Bargain"
+
+[gui]
+
+theme/custom="res://sprites/ui_ux/theme.tres"
 
 [input]
 
