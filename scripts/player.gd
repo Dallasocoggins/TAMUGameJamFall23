@@ -29,6 +29,7 @@ var curr_health = max_health
 @export var turn_acceleration = 50000.0
 
 @export var jump_velocity = -2000.0
+@export var pogo_velocity = -2000.0
 @export var jump_low_multiplier = 2 # Used for falling faster when jump button is let go of early
 @export var fall_acceleration_multiplier = 1.1
 @export var terminal_velocity = 5000.0
@@ -47,6 +48,7 @@ var curr_health = max_health
 
 @export var coyote_time = 0.1 # If you were on the floor in the last this many seconds, you can still jump
 @export var jump_buffer = 0.1 # If you try to jump not on the floor but land on the floor within this many seconds, you can still jump
+@export var pogo_cooldown_time = 0.2
 
 #@export var animation_idle_move_threshold = 10.0 # If you are moving slower than this sideways, play the idle animation
 
@@ -58,6 +60,7 @@ var jump_buffer_countdown = 0
 @onready var animation_player = $AnimationPlayer
 
 var air_attack_count_current = air_attack_max
+var pogo_countdown = 0
 
 @onready var angel_hud = $HUD/Angel
 @onready var vampire_hud = $HUD/Vampire
@@ -111,6 +114,8 @@ func _physics_process(delta):
 		coyote_time_countdown -= delta
 	if jump_buffer_countdown > 0:
 		jump_buffer_countdown -= delta
+	if pogo_countdown > 0:
+		pogo_countdown -= delta
 	
 
 	# Get the input direction and handle the movement/deceleration.
@@ -212,3 +217,11 @@ func take_damage(damage) -> void:
 	if(curr_health <= 0):
 		print("Dead")
 	print("Did Damage")
+
+func pogo():
+	if pogo_countdown > 0:
+		return
+	
+	pogo_countdown = pogo_cooldown_time
+	disable_movement = false
+	velocity.y = min(velocity.y, pogo_velocity)
