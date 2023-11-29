@@ -1,10 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://ncfc78vywjki"]
+[gd_scene load_steps=54 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
-[ext_resource type="Texture2D" uid="uid://d0wbf3qrrlk2p" path="res://sprites/parry/slice_right/frame_00001.png" id="3_hqcr3"]
 [ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="3_jmnur"]
-[ext_resource type="Texture2D" uid="uid://bwsblype31kvc" path="res://sprites/parry/slice_right/frame_00002.png" id="4_7qetj"]
-[ext_resource type="Texture2D" uid="uid://cif6dyt7filhi" path="res://sprites/parry/slice_right/frame_00003.png" id="5_d2g8s"]
 [ext_resource type="Texture2D" uid="uid://c24hasju1m7ur" path="res://sprites/parry/slice_right/frame_00004.png" id="6_sc0h6"]
 [ext_resource type="Texture2D" uid="uid://kkbmbcwaj26g" path="res://sprites/parry/slice_right/frame_00005.png" id="7_skens"]
 [ext_resource type="Texture2D" uid="uid://lq0x2jekunqs" path="res://sprites/parry/slice_right/frame_00006.png" id="8_jtrm1"]
@@ -152,6 +149,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_ufraa"]
 resource_name = "attack_down"
+length = 0.583341
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -160,7 +158,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1666, 0.3332, 0.4165, 0.6664, 0.7497, 0.9996),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("29_n5cw0"), ExtResource("30_7yakr"), ExtResource("31_jlj1k"), ExtResource("32_wndwf"), ExtResource("33_7sj7h"), ExtResource("34_t8ytn"), ExtResource("35_of81u")]
@@ -208,7 +206,7 @@ tracks/4/path = NodePath("HitBoxes/DownHitBox/HitBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4165, 0.9996),
+"times": PackedFloat32Array(0, 0.166667, 0.583333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -216,6 +214,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_7fowc"]
 resource_name = "attack_left"
+length = 0.500008
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -224,10 +223,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666666, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833, 0.1666, 0.2499, 0.3332, 0.4165, 0.4998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_hqcr3"), ExtResource("4_7qetj"), ExtResource("5_d2g8s"), ExtResource("6_sc0h6"), ExtResource("7_skens"), ExtResource("8_jtrm1"), ExtResource("9_l4yu5"), ExtResource("10_obqg7"), ExtResource("11_22lny"), ExtResource("12_kojh2")]
+"values": [ExtResource("6_sc0h6"), ExtResource("7_skens"), ExtResource("8_jtrm1"), ExtResource("9_l4yu5"), ExtResource("10_obqg7"), ExtResource("11_22lny"), ExtResource("12_kojh2")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -284,7 +283,7 @@ tracks/5/path = NodePath("HitBoxes/LeftHitBox/HitBox:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4165, 0.7497),
+"times": PackedFloat32Array(0, 0.1666, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -292,6 +291,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_p1u1q"]
 resource_name = "attack_side"
+length = 0.500008
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -300,10 +300,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666666, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_hqcr3"), ExtResource("4_7qetj"), ExtResource("5_d2g8s"), ExtResource("6_sc0h6"), ExtResource("7_skens"), ExtResource("8_jtrm1"), ExtResource("9_l4yu5"), ExtResource("10_obqg7"), ExtResource("11_22lny"), ExtResource("12_kojh2")]
+"values": [ExtResource("6_sc0h6"), ExtResource("7_skens"), ExtResource("8_jtrm1"), ExtResource("9_l4yu5"), ExtResource("10_obqg7"), ExtResource("11_22lny"), ExtResource("12_kojh2")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -348,7 +348,7 @@ tracks/4/path = NodePath("HitBoxes/RightHitBox/HitBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4165, 0.7497),
+"times": PackedFloat32Array(0, 0.166667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -356,7 +356,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_vndas"]
 resource_name = "attack_up"
-length = 0.83
+length = 0.500008
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -365,7 +365,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1666, 0.3332, 0.4998, 0.666666, 0.7497),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("36_khquc"), ExtResource("37_0kf1k"), ExtResource("38_n0kkf"), ExtResource("39_oqeph"), ExtResource("40_asgsq"), ExtResource("41_rq44j")]
@@ -413,7 +413,7 @@ tracks/4/path = NodePath("HitBoxes/UpHitBox/HitBox:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3332, 0.6664),
+"times": PackedFloat32Array(0, 0.166667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
