@@ -22,6 +22,12 @@ func load_main_menu():
 	var instance = scene.instantiate()
 	add_child(instance)
 
+func load_how_to_play():
+	unload_children()
+	var scene = preload("res://scenes/menus/how_to_play.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)
+
 func load_level():
 	unload_children()
 	var scene = preload("res://scenes/level/level1.tscn")
