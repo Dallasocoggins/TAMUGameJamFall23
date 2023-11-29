@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://rs7bbrinx0gv"]
+[gd_scene load_steps=15 format=3 uid="uid://rs7bbrinx0gv"]
 
 [ext_resource type="Script" path="res://scripts/BasicEnemy.gd" id="1_jg17y"]
 [ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="2_87v1a"]
@@ -49,17 +49,19 @@ radius = 85.0
 height = 432.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04o2e"]
-size = Vector2(467, 441)
+size = Vector2(251, 441)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb75g"]
+size = Vector2(166, 416)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsbx"]
 size = Vector2(189, 442)
 
-[node name="BruiserEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sm") groups=["enemy"]]
+[node name="BruiserEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 collision_mask = 4
 platform_floor_layers = 4294902015
 script = ExtResource("1_jg17y")
-sm = NodePath("StateMachine")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -71,28 +73,44 @@ shape = SubResource("CapsuleShape2D_4j10g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
+[node name="LedgeCheck" type="RayCast2D" parent="Sprite2D"]
+position = Vector2(99, 0)
+target_position = Vector2(1, 282)
+collision_mask = 4
+
 [node name="MyHitBox" type="Area2D" parent="Sprite2D" groups=["enemy"]]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("2_87v1a")
+damage = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
-position = Vector2(341.5, 3.5)
+position = Vector2(233.5, 3.5)
 shape = SubResource("RectangleShape2D_04o2e")
 disabled = true
+
+[node name="MyHitBox2" type="Area2D" parent="Sprite2D"]
+script = ExtResource("2_87v1a")
+damage = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox2"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_vb75g")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_0e4ld")
 initial_state = NodePath("idle")
 
-[node name="Follow" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite")]
+[node name="Follow" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite", "ledge_raycast")]
 script = ExtResource("4_0838v")
 enemy = NodePath("../..")
 sprite = NodePath("../../Sprite2D")
+ledge_raycast = NodePath("../../Sprite2D/LedgeCheck")
 
-[node name="idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+[node name="idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "ledge_raycast")]
 script = ExtResource("4_hd1ep")
 enemy = NodePath("../..")
+ledge_raycast = NodePath("../../Sprite2D/LedgeCheck")
 
 [node name="attack" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite", "animation_player")]
 script = ExtResource("5_64dec")

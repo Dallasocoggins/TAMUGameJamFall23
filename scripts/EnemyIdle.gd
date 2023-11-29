@@ -15,6 +15,8 @@ var wait_time_left = wait_time_max
 
 var player : CharacterBody2D
 
+@export var ledge_raycast : RayCast2D
+
 # Called when the node enters the scene tree for the first time.
 func _enter():
 	#print_debug("Hey1")
@@ -37,6 +39,12 @@ func _physics_update(delta):
 	#print_debug("wander ", wander_time_left)
 	#print_debug("wait ", wait_time_left)
 	var direction = 1 if enemy.is_facing_right() else -1
+	
+	if ledge_raycast:
+		var result = ledge_raycast.get_collider()
+		if !result:
+			enemy.flip_is_facing_right()
+	
 	if (wander_time_left > 0 && !enemy.is_on_wall()):
 		enemy.velocity.x = walking_speed * direction
 		wander_time_left -= delta

@@ -31,7 +31,6 @@ func _update(delta):
 	elif(cooldown_left <= 0):
 		if(direction.x < 0 and !enemy.is_facing_right()) or (direction.x > 0 and enemy.is_facing_right()):
 			enemy.flip_is_facing_right()
-			sprite.scale.x *= -1
 		attack_over = false
 		cooldown_left = cooldown
 		animation_player.play("attack")

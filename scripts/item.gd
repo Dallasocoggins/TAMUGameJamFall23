@@ -1,7 +1,7 @@
 @tool
 extends Node2D
 
-enum ItemType {ANGEL, VAMPIRE}
+enum ItemType {ANGEL, VAMPIRE, KEY}
 
 @export var texture: Texture2D
 @export var spriteScale = Vector2(1,1)

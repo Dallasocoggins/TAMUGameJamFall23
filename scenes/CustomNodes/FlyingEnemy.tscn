@@ -21,17 +21,17 @@ radius = 69.0005
 height = 433.999
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04o2e"]
-size = Vector2(263, 118)
+size = Vector2(363, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsbx"]
 size = Vector2(458, 168)
 
-[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sm") groups=["enemy"]]
+[node name="FlyingEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 collision_mask = 4
 platform_floor_layers = 4294901823
 script = ExtResource("1_sminw")
-sm = NodePath("StateMachine")
+health_points = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -50,7 +50,7 @@ collision_mask = 2
 script = ExtResource("2_jyerc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
-position = Vector2(-67.5, -1)
+position = Vector2(-2.5, -1)
 shape = SubResource("RectangleShape2D_04o2e")
 
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
@@ -64,12 +64,14 @@ enemy = NodePath("../..")
 [node name="follow" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite")]
 script = ExtResource("5_bbgky")
 enemy = NodePath("../..")
+move_speed = 1200.0
 sprite = NodePath("../../Sprite2D")
 
 [node name="DiveUp" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "dive_down", "sprite")]
 script = ExtResource("6_cgy38")
 enemy = NodePath("../..")
 dive_down = NodePath("../follow")
+move_speed = 1000.0
 sprite = NodePath("../../Sprite2D")
 
 [node name="MyHurtBox" type="Area2D" parent="."]

@@ -8,6 +8,7 @@ extends State
 var player : CharacterBody2D
 
 @export var sprite : Sprite2D
+@export var ledge_raycast : RayCast2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,9 +33,15 @@ func _physics_update(delta : float):
 	else:
 		enemy.velocity.x = -move_speed
 	
-	if(direction.x < 0 and !enemy.is_facing_right()) or (direction.x > 0 and enemy.is_facing_right()):
+	if(direction.x < -20 and !enemy.is_facing_right()) or (direction.x > 20 and enemy.is_facing_right()):
 		enemy.flip_is_facing_right()
-		sprite.scale.x *= -1
+	
+	if ledge_raycast:
+		var result = ledge_raycast.get_collider()
+		if !result:
+			enemy.flip_is_facing_right()
+			Transitioned.emit(self, "idle")
+			
 	
 		
 	

@@ -24,7 +24,6 @@ func _enter():
 
 	if(direction.x < 0 and !enemy.is_facing_right()) or (direction.x > 0 and enemy.is_facing_right()):
 		enemy.flip_is_facing_right()
-		sprite.scale.x *= -1
 
 	
 
@@ -34,8 +33,8 @@ func _physics_update(delta):
 			Transitioned.emit(self, "diveup")
 			
 		var dir = enemy.global_position - target
-		print_debug("target ", target)
-		print_debug( "Down", direction)
+		#print_debug("target ", target)
+		#print_debug( "Down", direction)
 		
 		enemy.velocity = move_speed * -direction.normalized()
 		

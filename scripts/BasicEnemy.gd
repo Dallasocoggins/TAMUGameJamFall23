@@ -3,10 +3,12 @@ extends CharacterBody2D
 
 @export var health_points = 100
 @export var attack_range := 400.0
+@export var start_facing_right = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var facing_right = true
 
-@export var sm : StateMachine
+@onready var sm = $StateMachine
+@onready var sprite = $Sprite2D
 @export var stunned_time = 1.0
 var stun_time_left = 0.0
 
@@ -44,6 +46,7 @@ func is_facing_right() -> bool:
 
 func flip_is_facing_right():
 	facing_right = !facing_right
+	sprite.scale.x *= -1
 
 func is_stunned() -> bool:
 	return stun_time_left > 0
