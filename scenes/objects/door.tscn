@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxhgyr2h3edrt"]
+[gd_scene load_steps=5 format=3 uid="uid://bxhgyr2h3edrt"]
 
-[ext_resource type="Script" path="res://scenes/objects/door.gd" id="1_lm3pt"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_qxqys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8vdx"]
+size = Vector2(269, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmumc"]
+size = Vector2(20, 86)
+
+[sub_resource type="ImageTexture" id="ImageTexture_n01je"]
 
 [node name="door" type="Node2D"]
-script = ExtResource("1_lm3pt")
+script = ExtResource("1_qxqys")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -0.5)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_v8vdx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3, 3)
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_mmumc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, -43)
+scale = Vector2(3, 3)
+texture = SubResource("ImageTexture_n01je")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

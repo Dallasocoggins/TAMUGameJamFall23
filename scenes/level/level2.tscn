@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c35vwpukavmkk"]
+[gd_scene load_steps=11 format=3 uid="uid://c35vwpukavmkk"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_4fhg6"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_tov3a"]
@@ -8,11 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://rs7bbrinx0gv" path="res://scenes/CustomNodes/BruiserEnemy.tscn" id="6_nfqru"]
 [ext_resource type="PackedScene" uid="uid://bm4ldjy2eb2yw" path="res://scenes/CustomNodes/FlyingEnemy.tscn" id="7_mee4l"]
 [ext_resource type="PackedScene" uid="uid://d2wj1bgl7bs2t" path="res://scenes/temporary_assets/temporary_one_way_platform.tscn" id="8_weesx"]
+[ext_resource type="Texture2D" uid="uid://bnpl4x2g6eplk" path="res://sprites/misc/background.png" id="9_67udu"]
+[ext_resource type="PackedScene" uid="uid://bxhgyr2h3edrt" path="res://scenes/objects/door.tscn" id="9_tr204"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_4fhg6")]
 position = Vector2(231, -305)
+max_health = 1000.0
 
 [node name="Angel" parent="." instance=ExtResource("3_i6unw")]
 position = Vector2(-6313, -6565)
@@ -49,9 +52,6 @@ position = Vector2(1550, -1320)
 
 [node name="FlyingEnemy" parent="Room1" instance=ExtResource("7_mee4l")]
 position = Vector2(-958, -1444)
-
-[node name="FlyingEnemy2" parent="Room1" instance=ExtResource("7_mee4l")]
-position = Vector2(-5582, -2683)
 
 [node name="TemporaryPlatform2" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(4065, -487)
@@ -151,19 +151,27 @@ position = Vector2(-2040, -7219)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform30" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(-2040, -9870)
-scale = Vector2(1, 26.268)
+position = Vector2(-2051, -9214)
+scale = Vector2(1, 13.483)
+
+[node name="TemporaryPlatform47" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(-2062, -11183)
+scale = Vector2(1, 13.483)
+
+[node name="TemporaryPlatform49" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(1830, -9271)
+scale = Vector2(1, 13.483)
+
+[node name="TemporaryPlatform50" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(1819, -11307)
+scale = Vector2(1, 13.483)
+
+[node name="TemporaryPlatform48" parent="Room1" instance=ExtResource("2_tov3a")]
+position = Vector2(-6757, -11081)
+scale = Vector2(1, 13.483)
 
 [node name="TemporaryPlatform31" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(1807, -7321)
-scale = Vector2(1, 26.268)
-
-[node name="TemporaryPlatform32" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(1807, -9972)
-scale = Vector2(1, 26.268)
-
-[node name="TemporaryPlatform46" parent="Room1" instance=ExtResource("2_tov3a")]
-position = Vector2(1807, -12576)
 scale = Vector2(1, 26.268)
 
 [node name="TemporaryPlatform33" parent="Room1" instance=ExtResource("2_tov3a")]
@@ -260,9 +268,6 @@ position = Vector2(3253, -3817)
 
 [node name="FlyingEnemy10" parent="Room2" instance=ExtResource("7_mee4l")]
 position = Vector2(-6384, -8652)
-
-[node name="FlyingEnemy11" parent="Room2" instance=ExtResource("7_mee4l")]
-position = Vector2(-5697, -8547)
 
 [node name="FlyingEnemy12" parent="Room2" instance=ExtResource("7_mee4l")]
 position = Vector2(-2934, -7892)
@@ -370,7 +375,7 @@ position = Vector2(-5171, -10292)
 position = Vector2(-4431, -10281)
 
 [node name="BruiserEnemy8" parent="Room2" instance=ExtResource("6_nfqru")]
-position = Vector2(-4772, -6078)
+position = Vector2(-4772, -6218)
 
 [node name="BruiserEnemy19" parent="Room2" instance=ExtResource("6_nfqru")]
 position = Vector2(-4915, -7660)
@@ -394,11 +399,15 @@ position = Vector2(-6222, -5486)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform24" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-5025, -5804)
+position = Vector2(-5044, -5861)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform31" parent="Room2" instance=ExtResource("8_weesx")]
 position = Vector2(-3930, -6081)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform54" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-2591, -5928)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform32" parent="Room2" instance=ExtResource("8_weesx")]
@@ -429,12 +438,20 @@ scale = Vector2(10, 0.4)
 position = Vector2(-3967, -9057)
 scale = Vector2(10, 0.4)
 
+[node name="TemporaryPlatform52" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-3967, -9459)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform53" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-2587, -9414)
+scale = Vector2(10, 0.4)
+
 [node name="TemporaryPlatform36" parent="Room2" instance=ExtResource("8_weesx")]
 position = Vector2(-1126, -5357)
 scale = Vector2(16, 0.4)
 
 [node name="TemporaryPlatform28" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-6287, -6353)
+position = Vector2(-6274, -6259)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform42" parent="Room2" instance=ExtResource("8_weesx")]
@@ -442,7 +459,11 @@ position = Vector2(-6318, -8291)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform44" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-5048, -7184)
+position = Vector2(-4979, -7184)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform51" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-6222, -7182)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform46" parent="Room2" instance=ExtResource("8_weesx")]
@@ -500,3 +521,21 @@ scale = Vector2(1, 20)
 [node name="TemporaryPlatform39" parent="Room2" instance=ExtResource("2_tov3a")]
 position = Vector2(-6763, -9403)
 scale = Vector2(1, 20)
+
+[node name="door" parent="Room2" instance=ExtResource("9_tr204")]
+position = Vector2(1830, -10289)
+
+[node name="door2" parent="Room2" instance=ExtResource("9_tr204")]
+position = Vector2(-2071, -10198)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_67udu")
+expand_mode = 2

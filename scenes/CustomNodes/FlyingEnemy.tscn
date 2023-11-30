@@ -27,11 +27,12 @@ size = Vector2(363, 110)
 size = Vector2(458, 168)
 
 [node name="FlyingEnemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(0.5, 0.5)
 collision_layer = 8
 collision_mask = 4
 platform_floor_layers = 4294901823
 script = ExtResource("1_sminw")
-health_points = 20
+health_points = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

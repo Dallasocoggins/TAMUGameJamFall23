@@ -30,6 +30,6 @@ func load_how_to_play():
 
 func load_level():
 	unload_children()
-	var scene = preload("res://scenes/level/level1.tscn")
+	var scene = preload("res://scenes/level/level2.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)

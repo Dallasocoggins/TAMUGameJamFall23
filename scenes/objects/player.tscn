@@ -474,6 +474,7 @@ height = 250.0
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_2lgnl")
+jump_velocity = -2500.0
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hok6a")

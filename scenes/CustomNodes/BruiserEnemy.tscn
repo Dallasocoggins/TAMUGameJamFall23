@@ -58,10 +58,12 @@ size = Vector2(166, 416)
 size = Vector2(189, 442)
 
 [node name="BruiserEnemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(0.8, 0.8)
 collision_layer = 8
 collision_mask = 4
 platform_floor_layers = 4294902015
 script = ExtResource("1_jg17y")
+health_points = 40
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -82,7 +84,7 @@ collision_mask = 4
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("2_87v1a")
-damage = 25
+damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
 position = Vector2(233.5, 3.5)

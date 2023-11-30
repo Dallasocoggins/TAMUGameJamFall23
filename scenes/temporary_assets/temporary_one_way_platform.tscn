@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2wj1bgl7bs2t"]
 
-[ext_resource type="Texture2D" uid="uid://ch68osfgvu41c" path="res://sprites/temporary_assets/object.png" id="1_jk7rp"]
+[ext_resource type="Texture2D" uid="uid://b6saslnvp356b" path="res://sprites/misc/Wood1.png" id="1_j43ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yl76k"]
 size = Vector2(100, 100)
@@ -17,5 +17,6 @@ shape = SubResource("RectangleShape2D_yl76k")
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_jk7rp")
+position = Vector2(0.499993, -3.21865e-06)
+scale = Vector2(0.0467593, 0.390625)
+texture = ExtResource("1_j43ll")
