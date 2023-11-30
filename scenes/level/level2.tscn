@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c35vwpukavmkk"]
+[gd_scene load_steps=12 format=3 uid="uid://c35vwpukavmkk"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_4fhg6"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_tov3a"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2wj1bgl7bs2t" path="res://scenes/temporary_assets/temporary_one_way_platform.tscn" id="8_weesx"]
 [ext_resource type="Texture2D" uid="uid://bnpl4x2g6eplk" path="res://sprites/misc/background.png" id="9_67udu"]
 [ext_resource type="PackedScene" uid="uid://bxhgyr2h3edrt" path="res://scenes/objects/door.tscn" id="9_tr204"]
+[ext_resource type="AudioStream" uid="uid://ccm8inn5rw1ir" path="res://audio/parasought_ost.wav" id="11_olq5h"]
 
 [node name="World" type="Node2D"]
 
@@ -539,3 +540,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_67udu")
 expand_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_olq5h")
+autoplay = true

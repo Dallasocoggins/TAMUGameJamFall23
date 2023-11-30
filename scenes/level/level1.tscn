@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://slyhluoya6p7"]
+[gd_scene load_steps=11 format=3 uid="uid://slyhluoya6p7"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_6hvob"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_y1ymi"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bm4ldjy2eb2yw" path="res://scenes/CustomNodes/FlyingEnemy.tscn" id="7_ovyxm"]
 [ext_resource type="PackedScene" uid="uid://d2wj1bgl7bs2t" path="res://scenes/temporary_assets/temporary_one_way_platform.tscn" id="8_ovett"]
 [ext_resource type="Texture2D" uid="uid://bnpl4x2g6eplk" path="res://sprites/misc/background.png" id="9_5dd8q"]
+[ext_resource type="AudioStream" uid="uid://ccm8inn5rw1ir" path="res://audio/parasought_ost.wav" id="10_ceou8"]
 
 [node name="World" type="Node2D"]
 
@@ -90,3 +91,7 @@ position = Vector2(866, -738)
 [node name="TemporaryPlatform11" parent="." instance=ExtResource("8_ovett")]
 position = Vector2(-380, -1124)
 scale = Vector2(14.92, 0.4)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ceou8")
+autoplay = true
