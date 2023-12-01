@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2k1shf2c8ema"]
 
 [ext_resource type="Texture2D" uid="uid://c3em620e3wgfq" path="res://sprites/ui_ux/Credits/Credits_background.jpg" id="1_1185y"]
-[ext_resource type="Texture2D" uid="uid://c1i7uh4d6xawh" path="res://sprites/ui_ux/Credits/Credits_0002_normal_Back.png" id="2_28276"]
-[ext_resource type="Texture2D" uid="uid://c4i8i2eioop78" path="res://sprites/ui_ux/Credits/Credits_0000_clicked_Back.png" id="3_vdn8u"]
-[ext_resource type="Texture2D" uid="uid://bl1eqtemi7d51" path="res://sprites/ui_ux/Credits/Credits_0001_hovered_Back.png" id="4_pbkdd"]
-[ext_resource type="Script" path="res://scripts/ui_ux/credits/Back.gd" id="5_2vkqr"]
+[ext_resource type="Texture2D" uid="uid://cnk8cupt71v31" path="res://sprites/ui_ux/Controls/Normal Buttons/HowToPlay_Normal_0001_Main-Menu.png" id="2_mqomw"]
+[ext_resource type="Texture2D" uid="uid://bwyvj1ffqkmwh" path="res://sprites/ui_ux/Controls/Clicked Buttons/Controls_Clicked_0000_Main-Menu.png" id="3_51nyu"]
+[ext_resource type="Texture2D" uid="uid://bboletj2cywni" path="res://sprites/ui_ux/Controls/Hovered Buttons/HowToPlay_Hovered_0000_Main-Menu.png" id="4_c422u"]
+[ext_resource type="Script" path="res://scripts/ui_ux/credits/MainMenu.gd" id="5_7c3im"]
 
 [node name="Credits" type="Node2D"]
 
@@ -19,8 +19,8 @@ grow_vertical = 2
 texture = ExtResource("1_1185y")
 expand_mode = 2
 
-[node name="Back" type="TextureButton" parent="CanvasLayer"]
-custom_minimum_size = Vector2(1200, 0)
+[node name="MainMenu" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1300, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -31,12 +31,12 @@ offset_top = -40.0
 offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(600, 0)
-texture_normal = ExtResource("2_28276")
-texture_pressed = ExtResource("3_vdn8u")
-texture_hover = ExtResource("4_pbkdd")
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(650, 0)
+texture_normal = ExtResource("2_mqomw")
+texture_pressed = ExtResource("3_51nyu")
+texture_hover = ExtResource("4_c422u")
 stretch_mode = 5
-script = ExtResource("5_2vkqr")
+script = ExtResource("5_7c3im")
 
-[connection signal="pressed" from="CanvasLayer/Back" to="CanvasLayer/Back" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu" to="CanvasLayer/MainMenu" method="_on_pressed"]

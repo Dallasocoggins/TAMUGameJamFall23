@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw7fowv4kdnij"
-path="res://.godot/imported/Pause_Hovered_0009_How-To-Play.png-2cf4ccc622c06b5edd318b0e9c42ece3.ctex"
+uid="uid://g7nkmdurxy71"
+path="res://.godot/imported/Pause_clicked_0013_Controls.png-f345307bc101fea71cb3c6599aefab68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui_ux/Pause/Hovered-Clicked Buttons/Pause_Hovered_0009_How-To-Play.png"
-dest_files=["res://.godot/imported/Pause_Hovered_0009_How-To-Play.png-2cf4ccc622c06b5edd318b0e9c42ece3.ctex"]
+source_file="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0013_Controls.png"
+dest_files=["res://.godot/imported/Pause_clicked_0013_Controls.png-f345307bc101fea71cb3c6599aefab68.ctex"]
 
 [params]
 

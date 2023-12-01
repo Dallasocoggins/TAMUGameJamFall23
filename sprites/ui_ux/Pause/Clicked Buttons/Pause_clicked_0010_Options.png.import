@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bctd7vfmxycfb"
-path="res://.godot/imported/Pause_Normal_0008_How-To-Play.png-83a4debc510f8a8193c73e061fa2e700.ctex"
+uid="uid://cdaq1tvpdd62q"
+path="res://.godot/imported/Pause_clicked_0010_Options.png-6301b8caaeff62e8ef0742532399b14a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0008_How-To-Play.png"
-dest_files=["res://.godot/imported/Pause_Normal_0008_How-To-Play.png-83a4debc510f8a8193c73e061fa2e700.ctex"]
+source_file="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0010_Options.png"
+dest_files=["res://.godot/imported/Pause_clicked_0010_Options.png-6301b8caaeff62e8ef0742532399b14a.ctex"]
 
 [params]
 

@@ -1,0 +1,134 @@
+[gd_scene load_steps=25 format=3 uid="uid://dg2emk52kyxnq"]
+
+[ext_resource type="Texture2D" uid="uid://dq8rn0qrw8ok" path="res://sprites/ui_ux/Pause/Background/Pause_background.png" id="1_20of7"]
+[ext_resource type="Texture2D" uid="uid://dm1jtlt7tjon2" path="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0010_Resume.png" id="2_1elnr"]
+[ext_resource type="Texture2D" uid="uid://bxljj4slq421e" path="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0016_Resume.png" id="3_3guf3"]
+[ext_resource type="Texture2D" uid="uid://pvap5d8quhd0" path="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_Hovered_0011_Resume.png" id="4_x6ouw"]
+[ext_resource type="Script" path="res://scripts/ui_ux/pause_menu/Resume.gd" id="5_jkykq"]
+[ext_resource type="Texture2D" uid="uid://btsjwal6fa3fg" path="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0006_Options.png" id="5_oecty"]
+[ext_resource type="Texture2D" uid="uid://cdaq1tvpdd62q" path="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0010_Options.png" id="6_cbnxt"]
+[ext_resource type="Texture2D" uid="uid://b7qt62vo2ejuy" path="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_Hovered_0007_Options.png" id="7_apjkm"]
+[ext_resource type="Texture2D" uid="uid://dp2i8epnlc34k" path="res://sprites/ui_ux/Pause/Normal Buttons/Pause_normal_0008_Controls.png" id="8_tf71p"]
+[ext_resource type="Texture2D" uid="uid://g7nkmdurxy71" path="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0013_Controls.png" id="9_365je"]
+[ext_resource type="Texture2D" uid="uid://l25re4gw1fhn" path="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_hovered_0009_Controls.png" id="10_ak0ol"]
+[ext_resource type="Texture2D" uid="uid://bk3bn7nswvbss" path="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0004_Credits.png" id="11_eg0yr"]
+[ext_resource type="Texture2D" uid="uid://bhl3j1ugvrc4m" path="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0007_Credits.png" id="12_7dcqs"]
+[ext_resource type="Script" path="res://scripts/ui_ux/pause_menu/Controls.gd" id="12_13p4a"]
+[ext_resource type="Texture2D" uid="uid://d3wde6p766pjr" path="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_Hovered_0005_Credits.png" id="13_uxsnk"]
+[ext_resource type="Texture2D" uid="uid://ckk7ewq5mwdhq" path="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0002_Main-Menu.png" id="14_y0hlg"]
+[ext_resource type="Texture2D" uid="uid://cnewywsyw4vjk" path="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0004_Main-Menu.png" id="15_6xqyn"]
+[ext_resource type="Script" path="res://scripts/ui_ux/pause_menu/Credits.gd" id="16_adfyr"]
+[ext_resource type="Texture2D" uid="uid://d1uw1xr8ey6ta" path="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_Hovered_0003_Main-Menu.png" id="16_ehrmh"]
+[ext_resource type="Texture2D" uid="uid://bguwvmyd6nkhg" path="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0000_Quit.png" id="17_2ygr6"]
+[ext_resource type="Texture2D" uid="uid://c82lsv13cy4rt" path="res://sprites/ui_ux/Pause/Clicked Buttons/Pause_clicked_0001_Quit.png" id="18_dnoc4"]
+[ext_resource type="Texture2D" uid="uid://dkiev3cuf2yvd" path="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_Hovered_0001_Quit.png" id="19_5v2nk"]
+[ext_resource type="Script" path="res://scripts/ui_ux/pause_menu/MainMenu.gd" id="20_vf7tr"]
+[ext_resource type="Script" path="res://scripts/ui_ux/pause_menu/Quit.gd" id="24_2pjlh"]
+
+[node name="PauseMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_20of7")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -636.5
+offset_bottom = 636.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(960, 620)
+alignment = 1
+
+[node name="Resume" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture_normal = ExtResource("2_1elnr")
+texture_pressed = ExtResource("3_3guf3")
+texture_hover = ExtResource("4_x6ouw")
+stretch_mode = 5
+script = ExtResource("5_jkykq")
+
+[node name="Spacing" type="Control" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Options" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture_normal = ExtResource("5_oecty")
+texture_pressed = ExtResource("6_cbnxt")
+texture_hover = ExtResource("7_apjkm")
+stretch_mode = 5
+
+[node name="Spacing2" type="Control" parent="CanvasLayer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Controls" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture_normal = ExtResource("8_tf71p")
+texture_pressed = ExtResource("9_365je")
+texture_hover = ExtResource("10_ak0ol")
+stretch_mode = 5
+script = ExtResource("12_13p4a")
+
+[node name="Spacing3" type="Control" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Credits" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture_normal = ExtResource("11_eg0yr")
+texture_pressed = ExtResource("12_7dcqs")
+texture_hover = ExtResource("13_uxsnk")
+stretch_mode = 5
+script = ExtResource("16_adfyr")
+
+[node name="Spacing4" type="Control" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="MainMenu" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture_normal = ExtResource("14_y0hlg")
+texture_pressed = ExtResource("15_6xqyn")
+texture_hover = ExtResource("16_ehrmh")
+stretch_mode = 5
+script = ExtResource("20_vf7tr")
+
+[node name="Spacing5" type="Control" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+texture_normal = ExtResource("17_2ygr6")
+texture_pressed = ExtResource("18_dnoc4")
+texture_hover = ExtResource("19_5v2nk")
+stretch_mode = 5
+script = ExtResource("24_2pjlh")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Resume" to="CanvasLayer/VBoxContainer/Resume" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Controls" to="CanvasLayer/VBoxContainer/Controls" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Credits" to="CanvasLayer/VBoxContainer/Credits" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MainMenu" to="CanvasLayer/VBoxContainer/MainMenu" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Quit" to="CanvasLayer/VBoxContainer/Quit" method="_on_pressed"]

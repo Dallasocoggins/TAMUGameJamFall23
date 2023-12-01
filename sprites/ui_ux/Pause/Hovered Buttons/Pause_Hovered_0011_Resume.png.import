@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk3bn7nswvbss"
-path="res://.godot/imported/Pause_Normal_0004_Credits.png-946b238f5dd7c0e5cda7bcd603cb3f15.ctex"
+uid="uid://pvap5d8quhd0"
+path="res://.godot/imported/Pause_Hovered_0011_Resume.png-20c9c18873a52fdad12ba71348eb91a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ui_ux/Pause/Normal Buttons/Pause_Normal_0004_Credits.png"
-dest_files=["res://.godot/imported/Pause_Normal_0004_Credits.png-946b238f5dd7c0e5cda7bcd603cb3f15.ctex"]
+source_file="res://sprites/ui_ux/Pause/Hovered Buttons/Pause_Hovered_0011_Resume.png"
+dest_files=["res://.godot/imported/Pause_Hovered_0011_Resume.png-20c9c18873a52fdad12ba71348eb91a1.ctex"]
 
 [params]
 
