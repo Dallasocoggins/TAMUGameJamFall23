@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ncfc78vywjki"]
+[gd_scene load_steps=57 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
 [ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="3_jmnur"]
@@ -40,9 +40,11 @@
 [ext_resource type="Texture2D" uid="uid://cpv8nqh4a8hwj" path="res://sprites/parry/slice_up/frame_00002.png" id="37_0kf1k"]
 [ext_resource type="Texture2D" uid="uid://o0rchekk5pmv" path="res://sprites/parry/slice_up/frame_00003.png" id="38_n0kkf"]
 [ext_resource type="Texture2D" uid="uid://ra1an3wprubo" path="res://sprites/parry/slice_up/frame_00004.png" id="39_oqeph"]
-[ext_resource type="Texture2D" uid="uid://q0x6q4tt7d28" path="res://sprites/temporary_assets/icon.svg" id="40_2a830"]
 [ext_resource type="Texture2D" uid="uid://lnao4lej4jey" path="res://sprites/parry/slice_up/frame_00005.png" id="40_asgsq"]
+[ext_resource type="Texture2D" uid="uid://bludsironcpgp" path="res://sprites/ui_ux/In-Game Overlay/In-Game-Overlay_0005_background.png" id="40_ypvr3"]
 [ext_resource type="Texture2D" uid="uid://cs4jjp2vpuhnm" path="res://sprites/parry/slice_up/frame_00006.png" id="41_rq44j"]
+[ext_resource type="Texture2D" uid="uid://c8dwnkquf187w" path="res://sprites/ui_ux/In-Game Overlay/Key.png" id="43_jyle0"]
+[ext_resource type="Texture2D" uid="uid://db3r5e53laryy" path="res://sprites/ui_ux/In-Game Overlay/In-Game-Overlay_0000_green_healthbar.png" id="44_vc1wu"]
 [ext_resource type="Script" path="res://scripts/PlayerPogoHitBox.gd" id="46_oxqjw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
@@ -512,32 +514,59 @@ editor_draw_drag_margin = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Key" type="TextureRect" parent="HUD"]
-offset_left = 470.0
-offset_top = -9.0
-offset_right = 2906.0
-offset_bottom = 2427.0
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("40_2a830")
+[node name="Background" type="TextureRect" parent="HUD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -449.0
+offset_bottom = -449.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_ypvr3")
 expand_mode = 2
+stretch_mode = 5
 
 [node name="Angel" type="TextureRect" parent="HUD"]
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 1864.0
-offset_bottom = 1130.0
-scale = Vector2(0.1, 0.1)
+offset_left = 25.0
+offset_top = 40.0
+offset_right = 1839.0
+offset_bottom = 1120.0
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("28_nt3gd")
 stretch_mode = 2
 
 [node name="Vampire" type="TextureRect" parent="HUD"]
-offset_left = 300.0
-offset_top = 50.0
-offset_right = 2114.0
-offset_bottom = 1130.0
-scale = Vector2(0.08, 0.08)
+offset_left = 160.0
+offset_top = 20.0
+offset_right = 1974.0
+offset_bottom = 2456.0
+scale = Vector2(0.04, 0.04)
 texture = ExtResource("29_f7sdj")
 stretch_mode = 2
+
+[node name="Key" type="TextureRect" parent="HUD"]
+offset_left = 260.0
+offset_top = 20.0
+offset_right = 360.0
+offset_bottom = 120.0
+texture = ExtResource("43_jyle0")
+expand_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -349.0
+offset_top = 11.0
+offset_right = 472.0
+offset_bottom = 212.0
+grow_horizontal = 0
+scale = Vector2(0.4, 0.4)
+max_value = 1.0
+step = 0.01
+value = 0.34
+fill_mode = 1
+texture_progress = ExtResource("44_vc1wu")
 
 [node name="HitBoxes" type="Node2D" parent="." groups=["player"]]
 

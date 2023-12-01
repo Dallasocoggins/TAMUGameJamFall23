@@ -1,6 +1,6 @@
 extends Node2D
 
-var in_level = false
+var can_pause = false
 var pause_screen = null
 
 
@@ -14,7 +14,7 @@ func _ready():
 	Engine.physics_ticks_per_second = DisplayServer.screen_get_refresh_rate()
 
 func _process(delta):
-	if Input.is_action_just_pressed("pause") && in_level:
+	if Input.is_action_just_pressed("pause") && can_pause:
 		# get_tree().quit()
 		if pause_screen == null:
 			pause()
@@ -22,12 +22,13 @@ func _process(delta):
 			unpause()
 
 func unload_children():
+	pause_screen = null
 	for node in get_children():
 		remove_child(node)
 
 func load_main_menu():
-	in_level = false
-	unpause()
+	can_pause = false
+	get_tree().paused = true
 	unload_children()
 	var scene = preload("res://scenes/menus/main_menu.tscn")
 	var instance = scene.instantiate()
@@ -46,7 +47,8 @@ func load_credits():
 	add_child(instance)
 
 func load_level():
-	in_level = true
+	can_pause = true
+	get_tree().paused = false
 	unload_children()
 	var scene = preload("res://scenes/level/level2.tscn")
 	var instance = scene.instantiate()
@@ -63,3 +65,17 @@ func unpause():
 	get_tree().paused = false
 	remove_child(pause_screen)
 	pause_screen = null
+
+func game_over():
+	can_pause = false
+	get_tree().paused = true
+	var scene = preload("res://scenes/menus/game_over.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)
+
+func victory():
+	can_pause = false
+	get_tree().paused = true
+	var scene = preload("res://scenes/menus/game_over.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)

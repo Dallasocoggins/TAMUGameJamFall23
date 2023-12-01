@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c35vwpukavmkk"]
+[gd_scene load_steps=13 format=3 uid="uid://c35vwpukavmkk"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_4fhg6"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_tov3a"]
 [ext_resource type="PackedScene" uid="uid://duqn11y65km6x" path="res://scenes/objects/item.tscn" id="3_i6unw"]
 [ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="4_f1w7b"]
 [ext_resource type="Texture2D" uid="uid://c3ffd13op718i" path="res://sprites/parasites/vampire.png" id="5_caqhn"]
+[ext_resource type="Texture2D" uid="uid://c8dwnkquf187w" path="res://sprites/ui_ux/In-Game Overlay/Key.png" id="5_eciqp"]
 [ext_resource type="PackedScene" uid="uid://rs7bbrinx0gv" path="res://scenes/CustomNodes/BruiserEnemy.tscn" id="6_nfqru"]
 [ext_resource type="PackedScene" uid="uid://bm4ldjy2eb2yw" path="res://scenes/CustomNodes/FlyingEnemy.tscn" id="7_mee4l"]
 [ext_resource type="PackedScene" uid="uid://d2wj1bgl7bs2t" path="res://scenes/temporary_assets/temporary_one_way_platform.tscn" id="8_weesx"]
@@ -31,10 +32,14 @@ type = 1
 
 [node name="Key" parent="." instance=ExtResource("3_i6unw")]
 position = Vector2(-4460, -10725)
+texture = ExtResource("5_eciqp")
+spriteScale = Vector2(0.7, 0.7)
 type = 2
 
 [node name="Key2" parent="." instance=ExtResource("3_i6unw")]
 position = Vector2(3298, -10707)
+texture = ExtResource("5_eciqp")
+spriteScale = Vector2(0.7, 0.7)
 type = 2
 
 [node name="Room1" type="Node2D" parent="."]
@@ -532,7 +537,7 @@ position = Vector2(-2071, -10198)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

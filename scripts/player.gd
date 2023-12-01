@@ -68,6 +68,7 @@ var pogo_countdown = 0
 @onready var angel_hud = $HUD/Angel
 @onready var vampire_hud = $HUD/Vampire
 @onready var key_hud = $HUD/Key
+@onready var health_bar = $HUD/HealthBar
 
 @onready var drop_raycast = $RayCast2D
 
@@ -174,6 +175,8 @@ func attack():
 	animation_player.queue("RESET")
 
 func _process(float) -> void:
+	health_bar.value = curr_health / max_health
+	
 	if can_attack():
 		if  Input.is_action_pressed("look_up") && Input.is_action_just_pressed("attack"):
 			animation_player.play("attack_up")
@@ -229,7 +232,8 @@ func take_damage(damage) -> void:
 	curr_health -= damage
 	if(curr_health <= 0):
 		print("Dead")
-		get_tree().reload_current_scene()
+		var main = get_node("/root/Main")
+		main.game_over()
 	print("Did Damage")
 
 func pogo():
