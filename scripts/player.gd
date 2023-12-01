@@ -23,7 +23,7 @@ var has_key = false
 var disable_movement = false
 
 @export var max_health = 100.0
-var curr_health = max_health
+@onready var curr_health = max_health
 
 @export var run_max_speed = 900.0
 @export var run_acceleration = 5000.0
