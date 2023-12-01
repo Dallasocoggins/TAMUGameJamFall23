@@ -1,0 +1,101 @@
+[gd_scene load_steps=16 format=3 uid="uid://4vbvg0kowof6"]
+
+[ext_resource type="Script" path="res://scripts/ui_ux/how_to_play/ChangeBackground.gd" id="1_bkh2g"]
+[ext_resource type="Texture2D" uid="uid://bchglydcmp4on" path="res://sprites/ui_ux/Controls/Backgrounds/Controls_ControllerBackground.jpg" id="2_aa7gv"]
+[ext_resource type="Texture2D" uid="uid://btwu5ahqja3i3" path="res://sprites/ui_ux/Controls/Backgrounds/Controls_KeyboardBackground.jpg" id="3_u5jsl"]
+[ext_resource type="Texture2D" uid="uid://ec2p1hoyavcd" path="res://sprites/ui_ux/Controls/Normal Buttons/HowToPlay_Normal_0005_Controller.png" id="4_xjjf5"]
+[ext_resource type="Texture2D" uid="uid://b4vcjdqvd2nbo" path="res://sprites/ui_ux/Controls/Clicked Buttons/Controls_Clicked_0006_Controller.png" id="5_e3wg2"]
+[ext_resource type="Texture2D" uid="uid://b274ddvm0siye" path="res://sprites/ui_ux/Controls/Hovered Buttons/HowToPlay_Hovered_0004_Controller.png" id="6_pnub8"]
+[ext_resource type="Script" path="res://scripts/ui_ux/how_to_play/Controller.gd" id="7_niwtk"]
+[ext_resource type="Texture2D" uid="uid://cnk8cupt71v31" path="res://sprites/ui_ux/Controls/Normal Buttons/HowToPlay_Normal_0001_Main-Menu.png" id="8_hxqf6"]
+[ext_resource type="Texture2D" uid="uid://bwyvj1ffqkmwh" path="res://sprites/ui_ux/Controls/Clicked Buttons/Controls_Clicked_0000_Main-Menu.png" id="9_bnalm"]
+[ext_resource type="Texture2D" uid="uid://bboletj2cywni" path="res://sprites/ui_ux/Controls/Hovered Buttons/HowToPlay_Hovered_0000_Main-Menu.png" id="10_mapjr"]
+[ext_resource type="Script" path="res://scripts/ui_ux/how_to_play/MainMenu.gd" id="11_trogp"]
+[ext_resource type="Texture2D" uid="uid://b6ba0d07qnv3o" path="res://sprites/ui_ux/Controls/Normal Buttons/HowToPlay_Normal_0003_Keyboard.png" id="12_rjoqc"]
+[ext_resource type="Texture2D" uid="uid://cupqr41nn1yne" path="res://sprites/ui_ux/Controls/Clicked Buttons/Controls_Clicked_0003_Keyboard.png" id="13_mias0"]
+[ext_resource type="Texture2D" uid="uid://bjfgwhjr61hey" path="res://sprites/ui_ux/Controls/Hovered Buttons/HowToPlay_Hovered_0002_Keyboard.png" id="14_vma3s"]
+[ext_resource type="Script" path="res://scripts/ui_ux/how_to_play/Keyboard.gd" id="15_uh51k"]
+
+[node name="Controls" type="Node2D"]
+script = ExtResource("1_bkh2g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ControllerBackground" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aa7gv")
+expand_mode = 2
+
+[node name="KeyboardBackground" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_u5jsl")
+expand_mode = 2
+
+[node name="Controller" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1200, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -140.0
+offset_right = 900.0
+offset_bottom = -26.0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(0, 57)
+texture_normal = ExtResource("4_xjjf5")
+texture_pressed = ExtResource("5_e3wg2")
+texture_hover = ExtResource("6_pnub8")
+stretch_mode = 5
+script = ExtResource("7_niwtk")
+
+[node name="MainMenu" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1300, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -140.0
+offset_right = 450.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(650, 57)
+texture_normal = ExtResource("8_hxqf6")
+texture_pressed = ExtResource("9_bnalm")
+texture_hover = ExtResource("10_mapjr")
+stretch_mode = 5
+script = ExtResource("11_trogp")
+
+[node name="Keyboard" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1100, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -900.0
+offset_top = -151.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(1100, 75)
+texture_normal = ExtResource("12_rjoqc")
+texture_pressed = ExtResource("13_mias0")
+texture_hover = ExtResource("14_vma3s")
+stretch_mode = 5
+script = ExtResource("15_uh51k")
+
+[connection signal="pressed" from="CanvasLayer/Controller" to="CanvasLayer/Controller" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu" to="CanvasLayer/MainMenu" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Keyboard" to="CanvasLayer/Keyboard" method="_on_pressed"]

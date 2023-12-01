@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2k1shf2c8ema"]
+
+[ext_resource type="Texture2D" uid="uid://c3em620e3wgfq" path="res://sprites/ui_ux/Credits/Credits_background.jpg" id="1_1185y"]
+[ext_resource type="Texture2D" uid="uid://c1i7uh4d6xawh" path="res://sprites/ui_ux/Credits/Credits_0002_normal_Back.png" id="2_28276"]
+[ext_resource type="Texture2D" uid="uid://c4i8i2eioop78" path="res://sprites/ui_ux/Credits/Credits_0000_clicked_Back.png" id="3_vdn8u"]
+[ext_resource type="Texture2D" uid="uid://bl1eqtemi7d51" path="res://sprites/ui_ux/Credits/Credits_0001_hovered_Back.png" id="4_pbkdd"]
+[ext_resource type="Script" path="res://scripts/ui_ux/credits/Back.gd" id="5_2vkqr"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1185y")
+expand_mode = 2
+
+[node name="Back" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(600, 0)
+texture_normal = ExtResource("2_28276")
+texture_pressed = ExtResource("3_vdn8u")
+texture_hover = ExtResource("4_pbkdd")
+stretch_mode = 5
+script = ExtResource("5_2vkqr")
+
+[connection signal="pressed" from="CanvasLayer/Back" to="CanvasLayer/Back" method="_on_pressed"]
