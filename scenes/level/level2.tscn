@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c35vwpukavmkk"]
+[gd_scene load_steps=14 format=3 uid="uid://c35vwpukavmkk"]
 
 [ext_resource type="PackedScene" uid="uid://ncfc78vywjki" path="res://scenes/objects/player.tscn" id="1_4fhg6"]
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_tov3a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bnpl4x2g6eplk" path="res://sprites/misc/background.png" id="9_67udu"]
 [ext_resource type="PackedScene" uid="uid://bxhgyr2h3edrt" path="res://scenes/objects/door.tscn" id="9_tr204"]
 [ext_resource type="AudioStream" uid="uid://ccm8inn5rw1ir" path="res://audio/parasought_ost.wav" id="11_olq5h"]
+[ext_resource type="PackedScene" uid="uid://b3t7axv3ndit" path="res://scenes/objects/FinishLine.tscn" id="13_86f5b"]
 
 [node name="World" type="Node2D"]
 
@@ -451,6 +452,38 @@ scale = Vector2(10, 0.4)
 position = Vector2(-2587, -9414)
 scale = Vector2(10, 0.4)
 
+[node name="TemporaryPlatform56" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-2193, -9872)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform57" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-1184, -9876)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform58" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-177, -9873)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform59" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(837, -9873)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform62" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(2854, -9873)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform63" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(3861, -9873)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform60" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(1854, -9877)
+scale = Vector2(10, 0.4)
+
+[node name="TemporaryPlatform61" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(1854, -9877)
+scale = Vector2(10, 0.4)
+
 [node name="TemporaryPlatform36" parent="Room2" instance=ExtResource("8_weesx")]
 position = Vector2(-1126, -5357)
 scale = Vector2(16, 0.4)
@@ -484,15 +517,15 @@ position = Vector2(-5228, -9871)
 scale = Vector2(30, 0.4)
 
 [node name="TemporaryPlatform45" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(-2228, -9871)
-scale = Vector2(30, 0.4)
+position = Vector2(-3196, -9874)
+scale = Vector2(10, 0.4)
 
-[node name="TemporaryPlatform48" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(3287, -9928)
-scale = Vector2(30, 0.4)
+[node name="TemporaryPlatform55" parent="Room2" instance=ExtResource("8_weesx")]
+position = Vector2(-2228, -9871)
+scale = Vector2(5, 0.065)
 
 [node name="TemporaryPlatform49" parent="Room2" instance=ExtResource("8_weesx")]
-position = Vector2(2375, -8506)
+position = Vector2(2366, -8512)
 scale = Vector2(10, 0.4)
 
 [node name="TemporaryPlatform50" parent="Room2" instance=ExtResource("8_weesx")]
@@ -548,3 +581,6 @@ expand_mode = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_olq5h")
 autoplay = true
+
+[node name="FinishLine" parent="." instance=ExtResource("13_86f5b")]
+position = Vector2(-16, -10382)
