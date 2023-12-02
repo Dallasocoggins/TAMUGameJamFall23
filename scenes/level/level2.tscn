@@ -17,7 +17,6 @@
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_4fhg6")]
 position = Vector2(231, -305)
-max_health = 1000.0
 
 [node name="Angel" parent="." instance=ExtResource("3_i6unw")]
 position = Vector2(-6313, -6565)
@@ -162,7 +161,7 @@ scale = Vector2(1, 13.483)
 
 [node name="TemporaryPlatform47" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(-2062, -11183)
-scale = Vector2(1, 13.483)
+scale = Vector2(1, 15.163)
 
 [node name="TemporaryPlatform49" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(1830, -9271)
@@ -170,7 +169,7 @@ scale = Vector2(1, 13.483)
 
 [node name="TemporaryPlatform50" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(1819, -11307)
-scale = Vector2(1, 13.483)
+scale = Vector2(1, 15.723)
 
 [node name="TemporaryPlatform48" parent="Room1" instance=ExtResource("2_tov3a")]
 position = Vector2(-6757, -11081)
