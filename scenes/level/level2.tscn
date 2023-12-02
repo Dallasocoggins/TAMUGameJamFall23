@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3brmgs5hcmli" path="res://scenes/temporary_assets/temporary_platform.tscn" id="2_tov3a"]
 [ext_resource type="PackedScene" uid="uid://duqn11y65km6x" path="res://scenes/objects/item.tscn" id="3_i6unw"]
 [ext_resource type="Texture2D" uid="uid://b1w08gr4mkbnb" path="res://sprites/parasites/angel.png" id="4_f1w7b"]
-[ext_resource type="Texture2D" uid="uid://csopwudok6us4" path="res://sprites/misc/key.png" id="5_4xldh"]
+[ext_resource type="Texture2D" uid="uid://csopwudok6us4" path="res://sprites/misc/Key.png" id="5_4xldh"]
 [ext_resource type="Texture2D" uid="uid://c3ffd13op718i" path="res://sprites/parasites/vampire.png" id="5_caqhn"]
 [ext_resource type="PackedScene" uid="uid://rs7bbrinx0gv" path="res://scenes/CustomNodes/BruiserEnemy.tscn" id="6_nfqru"]
 [ext_resource type="PackedScene" uid="uid://bm4ldjy2eb2yw" path="res://scenes/CustomNodes/FlyingEnemy.tscn" id="7_mee4l"]

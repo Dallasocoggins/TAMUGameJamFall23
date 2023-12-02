@@ -14,4 +14,5 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body is Player && body.has_key:
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true);
+		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		$Sprite2D.visible = false
