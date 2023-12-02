@@ -1,12 +1,32 @@
-[gd_scene load_steps=15 format=3 uid="uid://rs7bbrinx0gv"]
+[gd_scene load_steps=37 format=3 uid="uid://rs7bbrinx0gv"]
 
 [ext_resource type="Script" path="res://scripts/BasicEnemy.gd" id="1_jg17y"]
+[ext_resource type="Texture2D" uid="uid://ipnw8npntost" path="res://sprites/enemies/bruiser/Walk attack/Untitled_Artwork-1.png" id="2_5i3ju"]
 [ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="2_87v1a"]
+[ext_resource type="Texture2D" uid="uid://bwuyppfbk8wmb" path="res://sprites/enemies/bruiser/Walk idle/Untitled_Artwork-1.png" id="2_rdstu"]
 [ext_resource type="Script" path="res://scripts/StateMachine.gd" id="3_0e4ld"]
+[ext_resource type="Texture2D" uid="uid://d2bccll4nh1hi" path="res://sprites/enemies/bruiser/Walk attack/Untitled_Artwork-2.png" id="3_thb57"]
 [ext_resource type="Script" path="res://scripts/FollowGround.gd" id="4_0838v"]
 [ext_resource type="Script" path="res://scripts/EnemyIdle.gd" id="4_hd1ep"]
+[ext_resource type="Texture2D" uid="uid://cewfhghq2adyq" path="res://sprites/enemies/bruiser/Walk attack/Untitled_Artwork-3.png" id="4_vpsp5"]
 [ext_resource type="Script" path="res://scripts/MyHurtBox.gd" id="4_xsnvk"]
+[ext_resource type="Texture2D" uid="uid://d21jmv8brul61" path="res://sprites/enemies/bruiser/Walk attack/Untitled_Artwork-4.png" id="5_2phar"]
 [ext_resource type="Script" path="res://scripts/EnemyAttack.gd" id="5_64dec"]
+[ext_resource type="Texture2D" uid="uid://b5gvq1wke33gj" path="res://sprites/enemies/bruiser/Walk attack/Untitled_Artwork-5.png" id="6_ytie6"]
+[ext_resource type="Texture2D" uid="uid://cjaljx7vukfhc" path="res://sprites/enemies/bruiser/Walk attack/Untitled_Artwork-6.png" id="7_f6owa"]
+[ext_resource type="Texture2D" uid="uid://oew446qwq2at" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-1.png" id="8_tnuf0"]
+[ext_resource type="Texture2D" uid="uid://bepjehaaeom40" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-2.png" id="9_ap6er"]
+[ext_resource type="Texture2D" uid="uid://dlqkpr0kuja0i" path="res://sprites/enemies/bruiser/Walk idle/Untitled_Artwork-2.png" id="9_me2nd"]
+[ext_resource type="Texture2D" uid="uid://pt84v7361bf5" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-3.png" id="10_e048j"]
+[ext_resource type="Texture2D" uid="uid://oqup1jdpsjr8" path="res://sprites/enemies/bruiser/Walk idle/Untitled_Artwork-3.png" id="10_jp3xd"]
+[ext_resource type="Texture2D" uid="uid://cywg3b8ibfyv5" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-4.png" id="11_7c6j5"]
+[ext_resource type="Texture2D" uid="uid://cxvu84d0i60fg" path="res://sprites/enemies/bruiser/Walk idle/Untitled_Artwork-4.png" id="11_b5vgm"]
+[ext_resource type="Texture2D" uid="uid://c7hpua5awuabe" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-5.png" id="12_geri5"]
+[ext_resource type="Texture2D" uid="uid://olqy7qmq2x8u" path="res://sprites/enemies/bruiser/Walk idle/Untitled_Artwork-5.png" id="12_nuegf"]
+[ext_resource type="Texture2D" uid="uid://c2a6y2hn6ywyc" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-6.png" id="13_sp7gk"]
+[ext_resource type="Texture2D" uid="uid://v73k8radvtr" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-7.png" id="14_exoiu"]
+[ext_resource type="Texture2D" uid="uid://dqw78rrus834s" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-8.png" id="15_ah2nk"]
+[ext_resource type="Texture2D" uid="uid://w20xb4xah2pg" path="res://sprites/enemies/bruiser/Walk/Untitled_Artwork-9.png" id="16_jyk1f"]
 
 [sub_resource type="Animation" id="Animation_uig0a"]
 length = 0.001
@@ -22,9 +42,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rdstu")]
+}
 
 [sub_resource type="Animation" id="Animation_e2j7c"]
 resource_name = "attack"
+length = 0.90001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -32,16 +65,64 @@ tracks/0/path = NodePath("Sprite2D/MyHitBox/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.9),
+"times": PackedFloat32Array(0, 0.3, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_5i3ju"), ExtResource("3_thb57"), ExtResource("4_vpsp5"), ExtResource("5_2phar"), ExtResource("6_ytie6"), ExtResource("7_f6owa"), ExtResource("5_2phar"), ExtResource("4_vpsp5"), ExtResource("2_5i3ju")]
+}
+
+[sub_resource type="Animation" id="Animation_iugvj"]
+resource_name = "idle"
+length = 0.50001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_rdstu"), ExtResource("9_me2nd"), ExtResource("10_jp3xd"), ExtResource("11_b5vgm"), ExtResource("12_nuegf")]
+}
+
+[sub_resource type="Animation" id="Animation_jxla0"]
+resource_name = "walk"
+length = 0.90001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_tnuf0"), ExtResource("9_ap6er"), ExtResource("10_e048j"), ExtResource("11_7c6j5"), ExtResource("12_geri5"), ExtResource("13_sp7gk"), ExtResource("14_exoiu"), ExtResource("15_ah2nk"), ExtResource("16_jyk1f")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o1b2i"]
 _data = {
 "RESET": SubResource("Animation_uig0a"),
-"attack": SubResource("Animation_e2j7c")
+"attack": SubResource("Animation_e2j7c"),
+"idle": SubResource("Animation_iugvj"),
+"walk": SubResource("Animation_jxla0")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4j10g"]
@@ -49,7 +130,7 @@ radius = 85.0
 height = 432.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04o2e"]
-size = Vector2(251, 441)
+size = Vector2(126.25, 320.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vb75g"]
 size = Vector2(166, 416)
@@ -64,6 +145,7 @@ collision_mask = 4
 platform_floor_layers = 4294902015
 script = ExtResource("1_jg17y")
 health_points = 40
+attack_range = 50.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -74,6 +156,7 @@ libraries = {
 shape = SubResource("CapsuleShape2D_4j10g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+flip_h = true
 
 [node name="LedgeCheck" type="RayCast2D" parent="Sprite2D"]
 position = Vector2(99, 0)
@@ -87,7 +170,8 @@ script = ExtResource("2_87v1a")
 damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
-position = Vector2(233.5, 3.5)
+position = Vector2(161.875, -56.625)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_04o2e")
 disabled = true
 
@@ -99,24 +183,36 @@ damage = 5
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_vb75g")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(59.645, 0)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_rdstu")
+flip_h = true
+
 [node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_0e4ld")
 initial_state = NodePath("idle")
 
-[node name="Follow" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite", "ledge_raycast")]
+[node name="Follow" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite", "ledge_raycast", "animation_player")]
 script = ExtResource("4_0838v")
 enemy = NodePath("../..")
+move_speed = 500.0
+attack_range = 130.0
 sprite = NodePath("../../Sprite2D")
 ledge_raycast = NodePath("../../Sprite2D/LedgeCheck")
+animation_player = NodePath("../../AnimationPlayer")
 
-[node name="idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "ledge_raycast")]
+[node name="idle" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "ledge_raycast", "animation_player")]
 script = ExtResource("4_hd1ep")
 enemy = NodePath("../..")
 ledge_raycast = NodePath("../../Sprite2D/LedgeCheck")
+animation_player = NodePath("../../AnimationPlayer")
 
 [node name="attack" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("enemy", "sprite", "animation_player")]
 script = ExtResource("5_64dec")
 enemy = NodePath("../..")
+cooldown = 0.2
+attack_range = 50.0
 sprite = NodePath("../../Sprite2D")
 animation_player = NodePath("../../AnimationPlayer")
 
@@ -129,5 +225,6 @@ script = ExtResource("4_xsnvk")
 position = Vector2(-2.5, 3)
 shape = SubResource("RectangleShape2D_1dsbx")
 
+[connection signal="animation_changed" from="AnimationPlayer" to="StateMachine/attack" method="_on_animation_player_animation_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/attack" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="MyHurtBox" to="MyHurtBox" method="_on_area_entered"]

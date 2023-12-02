@@ -17,10 +17,13 @@ var player : CharacterBody2D
 
 @export var ledge_raycast : RayCast2D
 
+@export var animation_player : AnimationPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _enter():
 	#print_debug("Hey1")
 	player = get_tree().get_first_node_in_group("player_root")
+	animation_player.play("idle")
 	
 
 	

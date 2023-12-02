@@ -5,8 +5,8 @@ extends State
 @export var cooldown = 3.0
 @export var attack_range := 400.0
 var player : CharacterBody2D
-var cooldown_left = cooldown
-var attack_over = false
+@onready var cooldown_left = cooldown
+var attack_over = true
 
 @export var sprite : Sprite2D
 
@@ -16,8 +16,11 @@ var attack_over = false
 func _enter():
 	print_debug("Entered Attack")
 	player = get_tree().get_first_node_in_group("Player")
-	animation_player.play("attack")
-	animation_player.queue("RESET")
+	if attack_over:
+		attack_over = false
+		cooldown_left = cooldown
+		animation_player.play("attack")
+		animation_player.queue("RESET")
 	
 func _update(delta):
 	var direction = enemy.global_position - player.global_position
@@ -43,3 +46,6 @@ func _exit():
 
 func _on_animation_player_animation_finished(anim_name):
 	attack_over = true
+
+func _on_animation_player_animation_changed(old_name, new_name):
+	pass # Replace with function body.

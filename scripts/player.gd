@@ -225,7 +225,7 @@ func collide(other):
 
 
 func _on_animation_player_animation_started(anim_name):
-	if anim_name != "idle" and anim_name != "run_right":
+	if anim_name != "idle" and anim_name != "run_right" and anim_name != "attack_down" and anim_name != "RESET":
 		disable_movement = true
 		
 func take_damage(damage) -> void:
