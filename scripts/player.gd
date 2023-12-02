@@ -84,6 +84,11 @@ func _ready():
 	key_hud.hide()
 
 func _physics_process(delta):
+	# do vampire damage
+	if vampire_active:
+		curr_health -= 0.1
+	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -235,6 +240,12 @@ func take_damage(damage) -> void:
 		var main = get_node("/root/Main")
 		main.game_over()
 	print("Did Damage")
+	
+func vampire_heal(damage : int) -> void:
+	if(vampire_active):
+		curr_health += damage
+	if(curr_health >= max_health * 1.1):
+		curr_health = max_health * 1.1
 
 func pogo():
 	if pogo_countdown > 0:

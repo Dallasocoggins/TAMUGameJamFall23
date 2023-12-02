@@ -171,11 +171,12 @@ damage = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHitBox" groups=["enemy"]]
 position = Vector2(161.875, -56.625)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_04o2e")
 disabled = true
 
 [node name="MyHitBox2" type="Area2D" parent="Sprite2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("2_87v1a")
 damage = 5
 

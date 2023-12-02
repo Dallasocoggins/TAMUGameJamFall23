@@ -1,7 +1,6 @@
 [gd_scene load_steps=57 format=3 uid="uid://ncfc78vywjki"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2lgnl"]
-[ext_resource type="Script" path="res://scripts/MyHitBox.gd" id="3_jmnur"]
 [ext_resource type="Texture2D" uid="uid://c24hasju1m7ur" path="res://sprites/parry/slice_right/frame_00004.png" id="6_sc0h6"]
 [ext_resource type="Texture2D" uid="uid://kkbmbcwaj26g" path="res://sprites/parry/slice_right/frame_00005.png" id="7_skens"]
 [ext_resource type="Texture2D" uid="uid://lq0x2jekunqs" path="res://sprites/parry/slice_right/frame_00006.png" id="8_jtrm1"]
@@ -43,8 +42,9 @@
 [ext_resource type="Texture2D" uid="uid://lnao4lej4jey" path="res://sprites/parry/slice_up/frame_00005.png" id="40_asgsq"]
 [ext_resource type="Texture2D" uid="uid://bludsironcpgp" path="res://sprites/ui_ux/In-Game Overlay/In-Game-Overlay_0005_background.png" id="40_ypvr3"]
 [ext_resource type="Texture2D" uid="uid://cs4jjp2vpuhnm" path="res://sprites/parry/slice_up/frame_00006.png" id="41_rq44j"]
-[ext_resource type="Texture2D" uid="uid://csopwudok6us4" path="res://sprites/misc/key.png" id="43_2vfuf"]
+[ext_resource type="Texture2D" uid="uid://csopwudok6us4" path="res://sprites/misc/Key.png" id="43_2vfuf"]
 [ext_resource type="Texture2D" uid="uid://db3r5e53laryy" path="res://sprites/ui_ux/In-Game Overlay/In-Game-Overlay_0000_green_healthbar.png" id="44_vc1wu"]
+[ext_resource type="Script" path="res://scripts/TryToHeal.gd" id="45_6rxij"]
 [ext_resource type="Script" path="res://scripts/PlayerPogoHitBox.gd" id="46_oxqjw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hok6a"]
@@ -574,7 +574,7 @@ texture_progress = ExtResource("44_vc1wu")
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
-script = ExtResource("3_jmnur")
+script = ExtResource("45_6rxij")
 
 [node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/UpHitBox" groups=["player"]]
 polygon = PackedVector2Array(-95.7447, -453.901, 99.2908, -453.901, 326.241, -269.504, 255.319, -709.22, -3.5461, -826.241, -287.234, -702.128, -329.787, -262.411)
@@ -594,7 +594,7 @@ disabled = true
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
-script = ExtResource("3_jmnur")
+script = ExtResource("45_6rxij")
 
 [node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/LeftHitBox" groups=["player"]]
 polygon = PackedVector2Array(202.128, -535.461, -184.397, -390.071, -173.759, 390.071, 99.2908, 503.546, -574.468, 503.546, -762.411, -106.383, -503.546, -595.745, 106.383, -709.22)
@@ -604,7 +604,7 @@ disabled = true
 scale = Vector2(0.282, 0.282)
 collision_layer = 2
 collision_mask = 8
-script = ExtResource("3_jmnur")
+script = ExtResource("45_6rxij")
 
 [node name="HitBox" type="CollisionPolygon2D" parent="HitBoxes/RightHitBox" groups=["player"]]
 polygon = PackedVector2Array(-202.128, -535.461, 184.397, -390.071, 173.759, 390.071, -99.291, 503.546, 574.468, 503.546, 762.411, -106.383, 503.546, -595.745, -106.383, -709.22)
@@ -617,4 +617,7 @@ collision_mask = 4
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_player_animation_started"]
 [connection signal="area_entered" from="MyHurtBox" to="MyHurtBox" method="_on_area_entered"]
+[connection signal="area_entered" from="HitBoxes/UpHitBox" to="HitBoxes/UpHitBox" method="_on_area_entered"]
 [connection signal="area_entered" from="HitBoxes/DownHitBox" to="HitBoxes/DownHitBox" method="_on_area_entered"]
+[connection signal="area_entered" from="HitBoxes/LeftHitBox" to="HitBoxes/LeftHitBox" method="_on_area_entered"]
+[connection signal="area_entered" from="HitBoxes/RightHitBox" to="HitBoxes/RightHitBox" method="_on_area_entered"]
