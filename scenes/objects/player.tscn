@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://lnao4lej4jey" path="res://sprites/parry/slice_up/frame_00005.png" id="40_asgsq"]
 [ext_resource type="Texture2D" uid="uid://bludsironcpgp" path="res://sprites/ui_ux/In-Game Overlay/In-Game-Overlay_0005_background.png" id="40_ypvr3"]
 [ext_resource type="Texture2D" uid="uid://cs4jjp2vpuhnm" path="res://sprites/parry/slice_up/frame_00006.png" id="41_rq44j"]
-[ext_resource type="Texture2D" uid="uid://c8dwnkquf187w" path="res://sprites/ui_ux/In-Game Overlay/Key.png" id="43_jyle0"]
+[ext_resource type="Texture2D" uid="uid://csopwudok6us4" path="res://sprites/misc/key.png" id="43_2vfuf"]
 [ext_resource type="Texture2D" uid="uid://db3r5e53laryy" path="res://sprites/ui_ux/In-Game Overlay/In-Game-Overlay_0000_green_healthbar.png" id="44_vc1wu"]
 [ext_resource type="Script" path="res://scripts/PlayerPogoHitBox.gd" id="46_oxqjw"]
 
@@ -549,7 +549,7 @@ offset_left = 260.0
 offset_top = 20.0
 offset_right = 360.0
 offset_bottom = 120.0
-texture = ExtResource("43_jyle0")
+texture = ExtResource("43_2vfuf")
 expand_mode = 2
 
 [node name="HealthBar" type="TextureProgressBar" parent="HUD"]
