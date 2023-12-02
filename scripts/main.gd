@@ -76,6 +76,6 @@ func game_over():
 func victory():
 	can_pause = false
 	get_tree().paused = true
-	var scene = preload("res://scenes/menus/game_over.tscn")
+	var scene = preload("res://scenes/menus/victory.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)

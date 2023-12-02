@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbjw3p7vo837s"]
+
+[ext_resource type="Texture2D" uid="uid://bbcooyl8ls22w" path="res://sprites/ui_ux/Victory/Victory_background.png" id="1_igqq2"]
+[ext_resource type="Texture2D" uid="uid://jpju5xg458d" path="res://sprites/ui_ux/Victory/normal buttons/Victory_normal_0000_Replay.png" id="2_knd8b"]
+[ext_resource type="Texture2D" uid="uid://dr7mpi283ajoi" path="res://sprites/ui_ux/Victory/clicked buttons/Victory_clicked_0001_Replay.png" id="3_jd1ro"]
+[ext_resource type="Texture2D" uid="uid://bac35xhi0fkhk" path="res://sprites/ui_ux/Victory/hovered buttons/Victory_hovered_0001_Replay.png" id="4_iu2pf"]
+[ext_resource type="Script" path="res://scripts/ui_ux/game_over/Restart.gd" id="5_dsk8r"]
+[ext_resource type="Texture2D" uid="uid://bqge5m0rxt1sd" path="res://sprites/ui_ux/Victory/normal buttons/Victory_normal_0002_Main-Menu.png" id="6_47x1e"]
+[ext_resource type="Texture2D" uid="uid://by8ls1e7hyd2l" path="res://sprites/ui_ux/Victory/clicked buttons/Victory_clicked_0004_Main-Menu.png" id="7_h3o4n"]
+[ext_resource type="Texture2D" uid="uid://byjxabre14vnl" path="res://sprites/ui_ux/Victory/hovered buttons/Victory_hovered_0003_Main-Menu.png" id="8_adson"]
+[ext_resource type="Script" path="res://scripts/ui_ux/game_over/MainMenu.gd" id="9_b3lh8"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_igqq2")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(960, 280)
+
+[node name="Restart" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_knd8b")
+texture_pressed = ExtResource("3_jd1ro")
+texture_hover = ExtResource("4_iu2pf")
+stretch_mode = 5
+script = ExtResource("5_dsk8r")
+
+[node name="Spacing" type="Control" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="MainMenu" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_47x1e")
+texture_pressed = ExtResource("7_h3o4n")
+texture_hover = ExtResource("8_adson")
+stretch_mode = 5
+script = ExtResource("9_b3lh8")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Restart" to="CanvasLayer/VBoxContainer/Restart" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MainMenu" to="CanvasLayer/VBoxContainer/MainMenu" method="_on_pressed"]
